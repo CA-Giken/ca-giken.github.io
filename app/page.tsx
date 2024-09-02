@@ -9,34 +9,55 @@ const BASE_PATH = nextConfig.basePath ? nextConfig.basePath : "";
 export default () => {
   return (
     <main className={styles.main}>
-      <header className={styles.header}>
-        <h1 className={styles.title}>CA技研ホーム</h1>
-      </header>
-      <div className={styles.description}>
-        <div>
-          <Image
-            src={`${BASE_PATH}/ca5.png`}
-            alt="CA-Giken Logo"
-            className={styles.vercelLogo}
-            width={100}
-            height={100}
-            priority
-          />
-        </div>
-      </div>
+      <section className={styles.intro}>
+        <Image
+          src={`${BASE_PATH}/ca5.png`}
+          alt="CA-Giken Logo"
+          className={styles.vercelLogo}
+          width={100}
+          height={100}
+          priority
+        />
+        <h1 className={styles.title}>CA技研</h1>
+        <h4>
+          自動化リノベーションのための研究開発を行っています。
+        </h4>
+      </section>
 
-      <div className={styles.grid}>
-        <Link
-          href="/aboutus"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            会社情報
-          </h2>
-        </Link>
-      </div>
+      <section className={styles.content}>
+        <h2>
+          事業内容
+        </h2>
+        <div className={styles.grid}>
+          <Link
+            href="/products"
+            className={styles.card}
+            rel="noopener noreferrer"
+          >
+            <h2>
+              製品一覧
+            </h2>
+            <p>
+              OSS
+              ハードウェア
+              研究開発
+              ユーザーサポート
+            </p>
+          </Link>
+          <Link
+            href="/products"
+            className={styles.card}
+            rel="noopener noreferrer"
+          >
+            <h2>
+              導入実績
+            </h2>
+            <p>
+              これまでの実績を紹介
+            </p>
+          </Link>
+        </div>
+      </section>
     </main>
   );
 }
