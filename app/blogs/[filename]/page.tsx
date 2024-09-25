@@ -1,6 +1,7 @@
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import { metadata } from "@/app/layout";
+import { blogsDirectory } from "@/constants/info";
 import Image from "next/image";
 import {
 	type MarkdownData,
@@ -8,7 +9,6 @@ import {
 	getMarkdownContent,
 	markdownToHtml,
 } from "../../markdown-fetch";
-import { blogsDirectory } from "../page";
 import styles from "./page.module.css";
 
 interface Props {

@@ -1,15 +1,14 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 
+import { blogsDirectory, productsDirectory } from "@/constants/info";
 import Head from "next/head";
 import Link from "next/link";
 // For Github Pages
 import nextConfig from "../next.config.mjs";
-import { blogsDirectory } from "./blogs/page";
 import { Footer } from "./components/footer";
 import { Header } from "./components/header";
 import { getAllContent } from "./markdown-fetch";
-import { productsDirectory } from "./products/page";
 const BASE_PATH = nextConfig.basePath ? nextConfig.basePath : "";
 
 export default async () => {

@@ -1,6 +1,7 @@
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import { metadata } from "@/app/layout";
+import { productsDirectory } from "@/constants/info";
 import Image from "next/image";
 import {
 	type MarkdownData,
@@ -8,10 +9,7 @@ import {
 	getMarkdownContent,
 	markdownToHtml,
 } from "../../markdown-fetch";
-import { productsDirectory } from "../page";
 import styles from "./page.module.css";
-
-export const revalidate = 3600; // revalidate every hour
 
 interface Props {
 	params: {
