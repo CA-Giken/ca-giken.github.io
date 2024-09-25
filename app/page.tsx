@@ -1,42 +1,62 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 
+import Head from "next/head";
 import Link from "next/link";
 // For Github Pages
 import nextConfig from "../next.config.mjs";
+import { blogsDirectory } from "./blogs/page";
+import { Footer } from "./components/footer";
+import { Header } from "./components/header";
+import { getAllContent } from "./markdown-fetch";
+import { productsDirectory } from "./products/page";
 const BASE_PATH = nextConfig.basePath ? nextConfig.basePath : "";
 
-export default () => {
-  return (
-    <main className={styles.main}>
-      <header className={styles.header}>
-        <h1 className={styles.title}>CA技研ホーム</h1>
-      </header>
-      <div className={styles.description}>
-        <div>
-          <Image
-            src={`${BASE_PATH}/ca5.png`}
-            alt="CA-Giken Logo"
-            className={styles.vercelLogo}
-            width={100}
-            height={100}
-            priority
-          />
-        </div>
-      </div>
+export default async () => {
+	const products = await getAllContent(productsDirectory);
+	const blogs = await getAllContent(blogsDirectory);
 
-      <div className={styles.grid}>
-        <Link
-          href="/aboutus"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            会社情報
-          </h2>
-        </Link>
-      </div>
-    </main>
-  );
-}
+	return (
+		<>
+			<Head>
+				<title>CA技研</title>
+				<meta name="description" content="CA技研ホームページ" />
+				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
+
+			<section className={styles.hero}>
+				<h1 className={styles.title}>CA技研</h1>
+				<p className={styles.description}>
+					問題設備・遊休装置を再生 「自動化リノベーション」
+				</p>
+			</section>
+			<h2>
+				<Link href="/products">製品紹介</Link>
+			</h2>
+			<div className={styles.projectGrid}>
+				{products.map((product) => (
+					<Link key={product.slug} href={`/products/${product.slug}`}>
+						<div className={styles.projectCard}>
+							<h3>{product.title}</h3>
+							<p>{product.description}</p>
+						</div>
+					</Link>
+				))}
+			</div>
+			<h2>
+				<Link href="/blogs">最新ニュース</Link>
+			</h2>
+			<div className={styles.blogGrid}>
+				{blogs.map((blog) => (
+					<Link key={blog.slug} href={`/blogs/${blog.slug}`}>
+						<div className={styles.blogCard}>
+							<h3>{blog.title}</h3>
+							<p>{blog.description}</p>
+						</div>
+					</Link>
+				))}
+			</div>
+		</>
+	);
+};
