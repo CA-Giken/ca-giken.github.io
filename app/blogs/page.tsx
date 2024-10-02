@@ -1,5 +1,5 @@
-import ProductCard from "@/app/components/ProductCard";
 import { blogsDirectory } from "@/constants/info";
+import BlogCard from "../components/BlogCard.";
 import GridView from "../components/Grid";
 import { type MarkdownData, getAllContent } from "../markdown-fetch";
 import styles from "./page.module.css";
@@ -12,7 +12,7 @@ export default async () => {
 			<h1>CA技研ニュース</h1>
 			<GridView>
 				{blogs.map((blog) => (
-					<ProductCard key={blog.slug} data={blog} />
+					<BlogCard key={blog.slug} data={blog} />
 				))}
 			</GridView>
 		</div>
