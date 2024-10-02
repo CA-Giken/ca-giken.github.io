@@ -4,7 +4,7 @@ description: "IP54準拠防塵キャビネットにmini-ITXマザーボードを
 image: "/images/products/cabipc.png"
 created_at: 20240925
 last_updated: 20240925
-
+category: "embedded_controller"
 ---
 
 # キャビコン／制御盤キャビネット型PC
