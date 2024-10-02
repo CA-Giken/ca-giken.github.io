@@ -1,5 +1,5 @@
 .header {
-  background-color: #ffffff;
+  background-color: rgb(var(--background-end-rgb));
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
@@ -8,7 +8,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  max-width: 1200px;
+  max-width: var(--max-width);
   margin: 0 auto;
 }
 
@@ -32,7 +32,7 @@
 
 .navLinks a {
   text-decoration: none;
-  color: #333;
+  color: rgb(var(--foreground-rgb));
 }
 
 @media (max-width: 768px) {

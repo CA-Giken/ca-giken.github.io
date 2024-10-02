@@ -1,6 +1,13 @@
 .footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
+  background-color: rgb(0, 0, 0);
   padding: 1rem;
+  color: #fff;
+  margin-top: 1rem;
+}
+
+.footerContainer {
+  max-width: var(--max-width);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

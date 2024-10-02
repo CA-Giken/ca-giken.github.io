@@ -1,16 +1,13 @@
-import { Footer } from "@/app/components/footer";
-import { Header } from "@/app/components/header";
-import { metadata } from "@/app/layout";
+import styles from "@/app/github_markdown.module.css";
 import { productsDirectory } from "@/constants/info";
-import Image from "next/image";
 import {
 	type MarkdownData,
 	getAllSlugs,
 	getMarkdownContent,
 	markdownToHtml,
 } from "../../markdown-fetch";
-import styles from "./page.module.css";
 
+const dir = productsDirectory;
 interface Props {
 	params: {
 		filename: string;
@@ -18,7 +15,7 @@ interface Props {
 }
 
 export async function generateMetadata({ params }: Props) {
-	const page = await getMarkdownContent(productsDirectory, params.filename);
+	const page = await getMarkdownContent(dir, params.filename);
 
 	return {
 		title: page.title,
@@ -27,18 +24,15 @@ export async function generateMetadata({ params }: Props) {
 }
 
 export async function generateStaticParams() {
-	const slugs = await getAllSlugs(productsDirectory);
+	const slugs = await getAllSlugs(dir);
 	return slugs.map((slug) => ({
 		filename: slug,
 	}));
 }
 
 export default async ({ params }: Props) => {
-	const product: MarkdownData = await getMarkdownContent(
-		productsDirectory,
-		params.filename,
-	);
-	const content = await markdownToHtml(product.content);
+	const data: MarkdownData = await getMarkdownContent(dir, params.filename);
+	const content = await markdownToHtml(data.content);
 
 	return (
 		<div

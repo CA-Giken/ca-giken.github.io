@@ -6,8 +6,9 @@ import Head from "next/head";
 import Link from "next/link";
 // For Github Pages
 import nextConfig from "../next.config.mjs";
-import { Footer } from "./components/footer";
-import { Header } from "./components/header";
+import BlogCard from "./components/BlogCard.";
+import GridView from "./components/Grid";
+import ProductCard from "./components/ProductCard";
 import { getAllContent } from "./markdown-fetch";
 const BASE_PATH = nextConfig.basePath ? nextConfig.basePath : "";
 
@@ -33,29 +34,19 @@ export default async () => {
 			<h2>
 				<Link href="/products">製品紹介</Link>
 			</h2>
-			<div className={styles.projectGrid}>
+			<GridView>
 				{products.map((product) => (
-					<Link key={product.slug} href={`/products/${product.slug}`}>
-						<div className={styles.projectCard}>
-							<h3>{product.title}</h3>
-							<p>{product.description}</p>
-						</div>
-					</Link>
+					<ProductCard key={product.slug} data={product} />
 				))}
-			</div>
+			</GridView>
 			<h2>
 				<Link href="/blogs">最新ニュース</Link>
 			</h2>
-			<div className={styles.blogGrid}>
+			<GridView>
 				{blogs.map((blog) => (
-					<Link key={blog.slug} href={`/blogs/${blog.slug}`}>
-						<div className={styles.blogCard}>
-							<h3>{blog.title}</h3>
-							<p>{blog.description}</p>
-						</div>
-					</Link>
+					<BlogCard key={blog.slug} data={blog} />
 				))}
-			</div>
+			</GridView>
 		</>
 	);
 };

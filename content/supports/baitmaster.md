@@ -1,7 +1,7 @@
 ---
 title: "ベイトリール練習アプリ BaitMaster の使い方"
 description: "ベイトマスターアプリの操作方法を説明します。"
-image: "/images/products/512x512.png"
+image: "/images/product_placeholder.png"
 created_at: 20241002
 last_updated: 20241002
 category: "support"

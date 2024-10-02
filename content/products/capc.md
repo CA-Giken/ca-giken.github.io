@@ -7,7 +7,7 @@ last_updated: 20240925
 category: "embedded_controller"
 ---
 
-# キャビコン／制御盤キャビネット型PC
+# CAPC - キャビコン／制御盤キャビネット型PC
 
 ## 仕様比較
 

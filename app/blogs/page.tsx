@@ -1,7 +1,6 @@
 import ProductCard from "@/app/components/ProductCard";
 import { blogsDirectory } from "@/constants/info";
-import { Footer } from "../components/footer";
-import { Header } from "../components/header";
+import GridView from "../components/Grid";
 import { type MarkdownData, getAllContent } from "../markdown-fetch";
 import styles from "./page.module.css";
 
@@ -9,13 +8,13 @@ export default async () => {
 	const blogs: MarkdownData[] = await getAllContent(blogsDirectory);
 
 	return (
-		<div>
-			<h1 className={styles.title}>CA技研ニュース</h1>
-			<div className={styles.productGrid}>
+		<div className="container">
+			<h1>CA技研ニュース</h1>
+			<GridView>
 				{blogs.map((blog) => (
-					<ProductCard key={blog.slug} product={blog} />
+					<ProductCard key={blog.slug} data={blog} />
 				))}
-			</div>
+			</GridView>
 		</div>
 	);
 };

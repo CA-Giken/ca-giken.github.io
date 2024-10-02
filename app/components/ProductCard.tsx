@@ -4,24 +4,24 @@ import Link from "next/link";
 import styles from "./ProductCard.module.css";
 
 interface ProductCardProps {
-	product: MarkdownData;
+	data: MarkdownData;
 }
 
-export default function ProductCard({ product }: ProductCardProps) {
+export default function ProductCard({ data }: ProductCardProps) {
 	return (
-		<Link href={`/products/${product.slug}`} className={styles.card}>
+		<Link href={`/products/${data.slug}`} className={styles.card}>
 			<div className={styles.imageContainer}>
 				<Image
-					src={product.image}
-					alt={product.title}
+					src={data.image}
+					alt={data.title}
 					width={400}
 					height={300}
 					className={styles.image}
 				/>
 			</div>
 			<div className={styles.content}>
-				<h2 className={styles.title}>{product.title}</h2>
-				<p className={styles.description}>{product.description}</p>
+				<h2 className={styles.title}>{data.title}</h2>
+				<p className={styles.description}>{data.description}</p>
 			</div>
 		</Link>
 	);
