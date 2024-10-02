@@ -1,5 +1,6 @@
 import styles from "@/app/github_markdown.module.css";
 import { productsDirectory } from "@/constants/info";
+import Head from "next/head";
 import {
 	type MarkdownData,
 	getAllSlugs,
@@ -35,10 +36,19 @@ export default async ({ params }: Props) => {
 	const content = await markdownToHtml(data.content);
 
 	return (
-		<div
-			className={styles.markdownContainer}
-			// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
-			dangerouslySetInnerHTML={{ __html: content }}
-		/>
+		<>
+			<Head>
+				<title>{data.title} - CA技研</title>
+				<meta name="description" content={data.description} />
+				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
+
+			<div
+				className={styles.markdownContainer}
+				// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+				dangerouslySetInnerHTML={{ __html: content }}
+			/>
+		</>
 	);
 };

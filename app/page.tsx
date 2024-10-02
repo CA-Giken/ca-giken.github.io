@@ -31,22 +31,30 @@ export default async () => {
 					問題設備・遊休装置を再生 「自動化リノベーション」
 				</p>
 			</section>
-			<h2>
-				<Link href="/products">製品紹介</Link>
-			</h2>
-			<GridView>
-				{products.map((product) => (
-					<ProductCard key={product.slug} data={product} />
-				))}
-			</GridView>
-			<h2>
-				<Link href="/blogs">最新ニュース</Link>
-			</h2>
-			<GridView>
-				{blogs.map((blog) => (
-					<BlogCard key={blog.slug} data={blog} />
-				))}
-			</GridView>
+			<section className={styles.hero}>
+				<h2 className={styles.subheader}>
+					<Link href="/products">製品紹介</Link>
+				</h2>
+				<div className={styles.content}>
+					<GridView>
+						{products.map((product) => (
+							<ProductCard key={product.slug} data={product} />
+						))}
+					</GridView>
+				</div>
+			</section>
+			<section>
+				<h2 className={styles.subheader}>
+					<Link href="/blogs">最新ニュース</Link>
+				</h2>
+				<div className={styles.content}>
+					<GridView>
+						{blogs.map((blog) => (
+							<BlogCard key={blog.slug} data={blog} />
+						))}
+					</GridView>
+				</div>
+			</section>
 		</>
 	);
 };

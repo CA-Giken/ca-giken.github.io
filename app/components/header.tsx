@@ -15,8 +15,8 @@ export const Header = () => {
 					<Link href="/">ホーム</Link>
 					<Link href="/products">製品情報</Link>
 					<Link href="/blogs">ニュース</Link>
-					<Link href="/about">当社について</Link>
-					<Link href="/contact">お問い合わせ</Link>
+					<Link href="/aboutus">当社について</Link>
+					<Link href="/contactus">お問い合わせ</Link>
 				</div>
 			</nav>
 		</header>

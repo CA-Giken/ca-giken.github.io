@@ -113,8 +113,9 @@ main {
   flex: 1;
   width: 100%;
   padding: 1rem;
+  background: rgb(var(--background-end-rgb));
   max-width: var(--max-width);
-  margin: var(--min-margin) auto;
+  margin: 0 auto;
 }
 
 div.container {
