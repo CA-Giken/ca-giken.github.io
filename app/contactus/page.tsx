@@ -1,5 +1,24 @@
 import styles from "@/app/github_markdown.module.css";
+import { baseUrl, siteInfo } from "@/constants/info";
 import Head from "next/head";
+
+const title = `お問い合わせ - ${siteInfo.title}`;
+const description = "CA技研へのお問い合わせはこちら";
+
+export const metadata = {
+	title: title,
+	description: description,
+	alternates: {
+		canonical: `${baseUrl}/contactus`,
+	},
+	openGraph: {
+		type: "website",
+		siteName: siteInfo.title,
+		title: title,
+		description: description,
+		images: ["/images/ogp.png"],
+	},
+};
 
 export default async function ContactUs() {
 	return (

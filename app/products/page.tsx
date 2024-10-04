@@ -1,8 +1,26 @@
 import ProductCard from "@/app/components/ProductCard";
-import { productsDirectory } from "@/constants/info";
+import { baseUrl, productsDirectory, siteInfo } from "@/constants/info";
 import GridView from "../components/Grid";
 import { type MarkdownData, getAllContent } from "../markdown-fetch";
 import styles from "./page.module.css";
+
+const title = `製品情報 - ${siteInfo.title}`;
+const description = "CA技研が製作している製品の一覧です。";
+
+export const metadata = {
+	title: title,
+	description: description,
+	alternates: {
+		canonical: `${baseUrl}/products`,
+	},
+	openGraph: {
+		type: "website",
+		siteName: siteInfo.title,
+		title: title,
+		description: description,
+		images: ["/images/ogp.png"],
+	},
+};
 
 export default async () => {
 	const products: MarkdownData[] = await getAllContent(productsDirectory);

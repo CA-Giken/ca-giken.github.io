@@ -1,5 +1,5 @@
 import styles from "@/app/github_markdown.module.css";
-import { productsDirectory } from "@/constants/info";
+import { baseUrl, productsDirectory, siteInfo } from "@/constants/info";
 import Head from "next/head";
 import {
 	type MarkdownData,
@@ -19,8 +19,18 @@ export async function generateMetadata({ params }: Props) {
 	const page = await getMarkdownContent(dir, params.filename);
 
 	return {
-		title: page.title,
+		title: `${page.title} - ${siteInfo.title}`,
 		description: page.description,
+		alternates: {
+			canonical: `${baseUrl}/products/${params.filename}`,
+		},
+		openGraph: {
+			type: "website",
+			siteName: siteInfo.title,
+			title: `${page.title} - ${siteInfo.title}`,
+			description: page.description,
+			images: [page.image], // FIXME: should generate 1200x630 image for ogp
+		},
 	};
 }
 

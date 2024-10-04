@@ -1,16 +1,39 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 
-import { blogsDirectory, productsDirectory } from "@/constants/info";
+import {
+	baseUrl,
+	blogsDirectory,
+	productsDirectory,
+	siteInfo,
+} from "@/constants/info";
 import Head from "next/head";
 import Link from "next/link";
-// For Github Pages
 import nextConfig from "../next.config.mjs";
 import BlogCard from "./components/BlogCard.";
 import GridView from "./components/Grid";
 import ProductCard from "./components/ProductCard";
 import { getAllContent } from "./markdown-fetch";
+
+// For Github Pages
 const BASE_PATH = nextConfig.basePath ? nextConfig.basePath : "";
+
+const description = "問題設備・遊休装置を再生 「自動化リノベーション」";
+
+export const metadata = {
+	title: siteInfo.title,
+	description: description,
+	alternates: {
+		canonical: `${baseUrl}`,
+	},
+	openGraph: {
+		type: "website",
+		siteName: siteInfo.title,
+		title: `${siteInfo.title}`,
+		description: description,
+		images: ["/images/ogp.png"],
+	},
+};
 
 export default async () => {
 	let products = await getAllContent(productsDirectory);
@@ -22,13 +45,6 @@ export default async () => {
 
 	return (
 		<>
-			<Head>
-				<title>CA技研</title>
-				<meta name="description" content="CA技研ホームページ" />
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<link rel="icon" href="/favicon.ico" />
-			</Head>
-
 			<section className={styles.hero}>
 				<h1 className={styles.title}>CA技研</h1>
 				<p className={styles.description}>
