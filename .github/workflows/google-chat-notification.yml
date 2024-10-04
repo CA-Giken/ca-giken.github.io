@@ -12,13 +12,14 @@ jobs:
     - name: Send notification to Google Chat
       env:
         WEBHOOK_URL: ${{ secrets.GOOGLE_CHAT_WEBHOOK }}
+        COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
       run: |
         if [ -z "$WEBHOOK_URL" ]; then
           echo "Error: WEBHOOK_URL is not set. Please check your GitHub Secrets."
           exit 1
         fi
 
-        MESSAGE="CA-Giken Homepage updated! Check it out at https://ca-giken.github.io/"
+        MESSAGE="CA-Giken Homepage updated!\\n$COMMIT_MESSAGE.\\nCheck it out at https://ca-giken.github.io/"
 
         RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -X POST -H "Content-Type: application/json" -d "{\"text\": \"$MESSAGE\"}" "$WEBHOOK_URL")
 
