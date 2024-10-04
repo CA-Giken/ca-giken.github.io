@@ -18,7 +18,7 @@ jobs:
           exit 1
         fi
 
-        MESSAGE="CA-Giken Homepage updated!"
+        MESSAGE="CA-Giken Homepage updated! Check it out at https://ca-giken.github.io/"
 
         RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -X POST -H "Content-Type: application/json" -d "{\"text\": \"$MESSAGE\"}" "$WEBHOOK_URL")
 
