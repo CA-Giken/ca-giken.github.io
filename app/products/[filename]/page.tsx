@@ -1,5 +1,6 @@
 import styles from "@/app/github_markdown.module.css";
 import { baseUrl, productsDirectory, siteInfo } from "@/constants/info";
+import type { ResolvingMetadata } from "next";
 import Head from "next/head";
 import {
 	type MarkdownData,
@@ -15,8 +16,13 @@ interface Props {
 	};
 }
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata(
+	{ params }: Props,
+	parent: ResolvingMetadata,
+) {
 	const page = await getMarkdownContent(dir, params.filename);
+
+	const previousImages = (await parent).openGraph?.images || [];
 
 	return {
 		title: `${page.title} - ${siteInfo.title}`,
@@ -29,7 +35,15 @@ export async function generateMetadata({ params }: Props) {
 			siteName: siteInfo.title,
 			title: `${page.title} - ${siteInfo.title}`,
 			description: page.description,
-			images: [page.image], // FIXME: should generate 1200x630 image for ogp
+			images: [
+				{
+					url: page.image,
+					alt: page.title,
+					width: 1200,
+					height: 630,
+				},
+				...previousImages,
+			], // FIXME: should generate 1200x630 image for ogp
 		},
 	};
 }

@@ -16,7 +16,14 @@ export const metadata = {
 		siteName: siteInfo.title,
 		title: title,
 		description: description,
-		images: ["/images/ogp.png"],
+		images: [
+			{
+				url: "/images/ogp.png",
+				width: 1200,
+				height: 630,
+				alt: "CA技研",
+			},
+		],
 	},
 };
 

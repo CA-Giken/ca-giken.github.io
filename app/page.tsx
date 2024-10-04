@@ -7,7 +7,6 @@ import {
 	productsDirectory,
 	siteInfo,
 } from "@/constants/info";
-import Head from "next/head";
 import Link from "next/link";
 import nextConfig from "../next.config.mjs";
 import BlogCard from "./components/BlogCard.";
@@ -31,7 +30,14 @@ export const metadata = {
 		siteName: siteInfo.title,
 		title: `${siteInfo.title}`,
 		description: description,
-		images: ["/images/ogp.png"],
+		images: [
+			{
+				url: "/images/ogp.png",
+				width: 1200,
+				height: 630,
+				alt: "CA技研",
+			},
+		],
 	},
 };
 
