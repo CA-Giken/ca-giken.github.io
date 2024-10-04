@@ -5,6 +5,7 @@ image: "/images/products/odc_d46.png"
 created_at: 20241002
 last_updated: 20241002
 category: "embedded_controller"
+archived: true
 ---
 
 # φ46 IoTコントローラ

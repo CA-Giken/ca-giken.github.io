@@ -5,6 +5,7 @@ image: "/images/products/OldDC.png"
 created_at: 20241002
 last_updated: 20241002
 category: "oss"
+archived: true
 ---
 
 # DC for PIC Assembler

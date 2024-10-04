@@ -17,6 +17,8 @@ export interface MarkdownData {
 	content: string;
 	created_at: Date;
 	last_updated: Date;
+	category: string;
+	archived: boolean;
 }
 
 export async function getMarkdownContent(
@@ -35,6 +37,8 @@ export async function getMarkdownContent(
 		content: content,
 		created_at: ISOStringToDate(data.created_at),
 		last_updated: ISOStringToDate(data.last_updated),
+		category: data.category,
+		archived: data.archived,
 	};
 }
 

@@ -5,6 +5,7 @@ image: "/images/products/robo_winder.png"
 created_at: 20241002
 last_updated: 20241002
 category: "support"
+archived: false
 ---
 
 # RP683/DCプログラム書き換え

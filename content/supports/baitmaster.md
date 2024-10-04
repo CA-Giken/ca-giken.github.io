@@ -5,6 +5,7 @@ image: "/images/product_placeholder.png"
 created_at: 20241002
 last_updated: 20241002
 category: "support"
+archived: false
 ---
 
 # ベイトリール練習アプリ BaitMaster の使い方

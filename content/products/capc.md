@@ -5,6 +5,7 @@ image: "/images/products/cabipc.png"
 created_at: 20240925
 last_updated: 20240925
 category: "embedded_controller"
+archived: false
 ---
 
 # CAPC - キャビコン／制御盤キャビネット型PC

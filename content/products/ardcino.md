@@ -5,6 +5,7 @@ image: "/images/products/OpenDCb.png"
 created_at: 20240925
 last_updated: 20240925
 category: "oss"
+archived: false
 ---
 
 # "ArDCino" opens the digital control technology

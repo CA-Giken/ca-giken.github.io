@@ -13,8 +13,12 @@ import { getAllContent } from "./markdown-fetch";
 const BASE_PATH = nextConfig.basePath ? nextConfig.basePath : "";
 
 export default async () => {
-	const products = await getAllContent(productsDirectory);
-	const blogs = await getAllContent(blogsDirectory);
+	let products = await getAllContent(productsDirectory);
+	let blogs = await getAllContent(blogsDirectory);
+
+	// Show only non-archived content
+	products = products.filter((product) => !product.archived);
+	blogs = blogs.filter((blogs) => !blogs.archived);
 
 	return (
 		<>
@@ -30,6 +34,14 @@ export default async () => {
 				<p className={styles.description}>
 					問題設備・遊休装置を再生 「自動化リノベーション」
 				</p>
+				<div className={styles.imageContainer}>
+					<Image
+						src={`${BASE_PATH}/images/header.png`}
+						alt={"CA-Giken header"}
+						layout="fill"
+						objectFit="cover"
+					/>
+				</div>
 			</section>
 			<section className={styles.hero}>
 				<h2 className={styles.subheader}>

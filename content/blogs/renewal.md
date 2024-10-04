@@ -5,6 +5,7 @@ image: "/images/blog_placeholder.png"
 created_at: 20240925
 last_updated: 20240925
 category: "news"
+archived: false
 ---
 
 # CA技研 サイトを更新しました

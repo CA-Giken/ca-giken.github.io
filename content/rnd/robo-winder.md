@@ -5,6 +5,7 @@ image: "/images/products/robo_winder.png"
 created_at: 20241002
 last_updated: 20241002
 category: "robotics_and_automation"
+archived: false
 ---
 
 # Robo Winder

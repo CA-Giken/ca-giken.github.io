@@ -15,8 +15,9 @@
 
 1. Install node.js
 2. Install pnpm: `npm install -g pnpm`
-3. `pnpm dev`
-4. Access to localhost:3000 in browser.
+3. `pnpm install`
+4. `pnpm dev`
+5. Access to localhost:3000 in browser.
 
 ### Staging Preview
 
@@ -45,6 +46,7 @@ Markdown files require a header field.
 | created_at | 20241002 | 記事作成日、ソートに利用します。|
 | last_updated | 20241002 | 記事更新日、今のところ利用なし |
 | category | "oss" | 記事種別 |
+| archived | false | 一覧に表示するかどうか |
 
 | categories | directory | description |
 | --- | --- | --- |
@@ -64,5 +66,6 @@ image: "/images/product_placeholder.png"
 created_at: 20241002
 last_updated: 20241002
 category: "support"
+archived: false
 ---
 ```

@@ -1,7 +1,7 @@
 import type { MarkdownData } from "@/app/markdown-fetch";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "./ProductCard.module.css";
+import styles from "./BlogCard.module.css";
 
 interface CardProps {
 	data: MarkdownData;

@@ -16,6 +16,7 @@
 .imageContainer {
   width: 100%;
   height: 0;
+  display: none;
   padding-bottom: 75%; /* 4:3 aspect ratio */
   position: relative;
 }
@@ -50,4 +51,10 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .imageContainer {
+    display: block;
+  }
 }
