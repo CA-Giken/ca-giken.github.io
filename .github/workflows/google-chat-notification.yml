@@ -1,0 +1,30 @@
+name: Google Chat Notification
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Send notification to Google Chat
+      env:
+        WEBHOOK_URL: ${{ secrets.GOOGLE_CHAT_WEBHOOK }}
+      run: |
+        if [ -z "$WEBHOOK_URL" ]; then
+          echo "Error: WEBHOOK_URL is not set. Please check your GitHub Secrets."
+          exit 1
+        fi
+
+        MESSAGE="CA-Giken Homepage updated!"
+
+        RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -X POST -H "Content-Type: application/json" -d "{\"text\": \"$MESSAGE\"}" "$WEBHOOK_URL")
+
+        if [ "$RESPONSE" != "200" ]; then
+          echo "Error: Failed to send notification. HTTP status code: $RESPONSE"
+          exit 1
+        else
+          echo "Notification sent successfully"
+        fi
