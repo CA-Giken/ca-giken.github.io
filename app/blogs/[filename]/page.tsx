@@ -28,7 +28,7 @@ export async function generateMetadata(
 		title: `${page.title} - ${siteInfo.title}`,
 		description: page.description,
 		alternates: {
-			canonical: `${baseUrl}/products/${params.filename}`,
+			canonical: `${baseUrl}/blogs/${params.filename}`,
 		},
 		openGraph: {
 			type: "website",
@@ -37,7 +37,7 @@ export async function generateMetadata(
 			description: page.description,
 			images: [
 				{
-					url: page.image,
+					url: `${baseUrl}${page.image}`,
 					alt: page.title,
 					width: 1200,
 					height: 630,

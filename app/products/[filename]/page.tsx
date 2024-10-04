@@ -37,7 +37,7 @@ export async function generateMetadata(
 			description: page.description,
 			images: [
 				{
-					url: page.image,
+					url: `${baseUrl}${page.image}`,
 					alt: page.title,
 					width: 1200,
 					height: 630,

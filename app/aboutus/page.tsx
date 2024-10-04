@@ -19,7 +19,7 @@ export const metadata = {
 		description: description,
 		images: [
 			{
-				url: "/images/ogp.png",
+				url: `${baseUrl}/images/ogp.png`,
 				width: 1200,
 				height: 630,
 				alt: "CA技研",
