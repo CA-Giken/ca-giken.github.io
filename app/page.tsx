@@ -67,7 +67,7 @@ export default async () => {
 			</section>
 			<section className={styles.hero}>
 				<h2 className={styles.subheader}>
-					<Link href="/products">製品紹介</Link>
+					<Link href="/products">製品紹介・開発事例</Link>
 				</h2>
 				<div className={styles.content}>
 					<GridView>

@@ -4,8 +4,8 @@ import GridView from "../components/Grid";
 import { type MarkdownData, getAllContent } from "../markdown-fetch";
 import styles from "./page.module.css";
 
-const title = `製品情報 - ${siteInfo.title}`;
-const description = "CA技研が製作している製品の一覧です。";
+const title = `製品紹介・開発事例 - ${siteInfo.title}`;
+const description = "CA技研が製作している製品・開発事例の一覧です。";
 
 export const metadata = {
 	title: title,
@@ -34,7 +34,7 @@ export default async () => {
 
 	return (
 		<div className="container">
-			<h1>製品情報</h1>
+			<h1>製品紹介・開発事例</h1>
 			<GridView>
 				{products.map((product) => (
 					<ProductCard key={product.slug} data={product} />
