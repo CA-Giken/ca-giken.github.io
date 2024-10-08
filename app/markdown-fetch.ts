@@ -53,6 +53,13 @@ export async function getAllContent(dir: string): Promise<MarkdownData[]> {
 	const data = await Promise.all(
 		slugs.map((slug) => getMarkdownContent(pwddir, slug)),
 	);
+	// last updated でソート
+	data.sort((a, b) => {
+		if (a.last_updated < b.last_updated) {
+			return 1;
+		}
+		return -1;
+	});
 	return data;
 }
 
