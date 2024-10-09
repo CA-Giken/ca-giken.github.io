@@ -1,13 +1,13 @@
-import styles from "@/app/github_markdown.module.css";
+import mdStyles from "@/app/github_markdown.module.css";
 import { baseUrl, productsDirectory, siteInfo } from "@/constants/info";
 import type { ResolvingMetadata } from "next";
-import Head from "next/head";
 import {
 	type MarkdownData,
 	getAllSlugs,
 	getMarkdownContent,
 	markdownToHtml,
 } from "../../markdown-fetch";
+import styles from "./page.module.css";
 
 const dir = productsDirectory;
 interface Props {
@@ -60,19 +60,12 @@ export default async ({ params }: Props) => {
 	const content = await markdownToHtml(data.content);
 
 	return (
-		<>
-			<Head>
-				<title>{data.title} - CA技研</title>
-				<meta name="description" content={data.description} />
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<link rel="icon" href="/favicon.ico" />
-			</Head>
-
+		<div className={styles.container}>
 			<div
-				className={styles.markdownContainer}
+				className={mdStyles.markdownContainer}
 				// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 				dangerouslySetInnerHTML={{ __html: content }}
 			/>
-		</>
+		</div>
 	);
 };

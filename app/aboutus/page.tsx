@@ -1,7 +1,8 @@
-import styles from "@/app/github_markdown.module.css";
+import mdStyles from "@/app/github_markdown.module.css";
 import { baseUrl, siteInfo } from "@/constants/info";
 import Head from "next/head";
 import { getMarkdownContent, markdownToHtml } from "../markdown-fetch";
+import styles from "./page.module.css";
 
 const title = `会社情報 - ${siteInfo.title}`;
 const description = "CA技研の会社情報、企業理念";
@@ -36,16 +37,9 @@ export default async function AboutUs() {
 	const policyHtml = await markdownToHtml(policy.content);
 
 	return (
-		<>
-			<Head>
-				<title>{aboutus.title} - CA技研</title>
-				<meta name="description" content={aboutus.description} />
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<link rel="icon" href="/favicon.ico" />
-			</Head>
-
+		<div className={styles.container}>
 			<div
-				className={styles.markdownContainer}
+				className={mdStyles.markdownContainer}
 				// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 				dangerouslySetInnerHTML={{ __html: aboutusHtml }}
 			/>
@@ -53,10 +47,10 @@ export default async function AboutUs() {
 				<span />
 			</div>
 			<div
-				className={styles.markdownContainer}
+				className={mdStyles.markdownContainer}
 				// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 				dangerouslySetInnerHTML={{ __html: policyHtml }}
 			/>
-		</>
+		</div>
 	);
 }

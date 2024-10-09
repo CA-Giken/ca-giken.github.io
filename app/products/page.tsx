@@ -33,7 +33,7 @@ export default async () => {
 	const products: MarkdownData[] = await getAllContent(productsDirectory);
 
 	return (
-		<div className="container">
+		<div className={styles.container}>
 			<h1>製品紹介・開発事例</h1>
 			<GridView>
 				{products.map((product) => (

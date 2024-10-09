@@ -5,6 +5,10 @@
   --breakpoint-xl: 1280px;
 
   --max-width: var(--breakpoint-xl);
+
+  --container-padding-vertical: 1rem;
+  --container-padding-horizontal: 1rem;
+
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
@@ -110,17 +114,13 @@ body {
 }
 
 main {
-  flex: 1;
   width: 100%;
-  padding: 1rem;
-  background: rgb(var(--background-end-rgb));
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-
-div.container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
+  flex: 1;
+  padding: 0;
+  margin: 0 auto;
 }
 
 h1 {
@@ -136,7 +136,12 @@ a {
 }
 
 @media (min-width: 768px) {
-  div.container {
+  :root {
+    --container-padding-vertical: 1.5rem;
+    --container-padding-horizontal: 1.5rem;
+  }
+
+  .container {
     padding: 2rem;
   }
 
@@ -147,7 +152,12 @@ a {
 }
 
 @media (min-width: 480px) {
-  div.container {
+  :root {
+    --container-padding-vertical: 1rem;
+    --container-padding-horizontal: 1rem;
+  }
+
+  .container {
     padding: 1.5rem;
   }
 

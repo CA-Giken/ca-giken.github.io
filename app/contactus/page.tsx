@@ -1,6 +1,5 @@
-import styles from "@/app/github_markdown.module.css";
 import { baseUrl, siteInfo } from "@/constants/info";
-import Head from "next/head";
+import styles from "./page.module.css";
 
 const title = `お問い合わせ - ${siteInfo.title}`;
 const description = "CA技研へのお問い合わせはこちら";
@@ -29,14 +28,7 @@ export const metadata = {
 
 export default async function ContactUs() {
 	return (
-		<>
-			<Head>
-				<title>お問い合わせ - CA技研</title>
-				<meta name="description" content="お問い合わせ" />
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<link rel="icon" href="/favicon.ico" />
-			</Head>
-
+		<div className={styles.container}>
 			<div className={styles.markdownContainer}>
 				<h1>お問い合わせ</h1>
 				<p>
@@ -44,6 +36,6 @@ export default async function ContactUs() {
 				</p>
 				<p>TODO:</p>
 			</div>
-		</>
+		</div>
 	);
 }

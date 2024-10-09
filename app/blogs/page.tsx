@@ -33,7 +33,7 @@ export default async () => {
 	const blogs: MarkdownData[] = await getAllContent(blogsDirectory);
 
 	return (
-		<div className="container">
+		<div className={styles.container}>
 			<h1>CA技研ニュース</h1>
 			<GridView>
 				{blogs.map((blog) => (

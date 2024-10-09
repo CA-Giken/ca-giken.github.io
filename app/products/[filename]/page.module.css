@@ -1,56 +1,9 @@
-.markdownContainer {
-  font-family: var(--font-mono);
-  line-height: 1.6;
-  color: rgb(var(--foreground-rgb));
-}
-
-.markdownContainer table {
-  border-collapse: collapse;
+.container {
+  background: rgb(var(--background-end-rgb));
+  padding: var(--container-padding-vertical) var(--container-padding-horizontal);
   width: 100%;
-  margin-bottom: 1rem;
-}
-
-.markdownContainer th, .markdownContainer td {
-  border: 1px solid rgb(var(--foreground-rgb));
-  padding: 8px;
-  text-align: left;
-}
-
-.markdownContainer th {
-  background-color: #f2f2f2;
-  font-weight: bold;
-}
-
-.markdownContainer a {
-  color: rgb(var(--link-text-rgb));
-  text-decoration: underline;
-}
-
-.markdownContainer h1, .markdownContainer h2, .markdownContainer h3 {
-  margin-top: 1.5em;
-  margin-bottom: 0.5em;
-}
-
-.markdownContainer p {
-  margin-bottom: 1em;
-}
-
-.markdownContainer ul, .markdownContainer ol {
-  margin-bottom: 1em;
-  padding-left: 2em;
-}
-
-.markdownContainer code {
-  background-color: #f0f0f0;
-  color: #000000;
-  padding: 2px 4px;
-  border-radius: 4px;
-}
-
-.markdownContainer pre {
-  background-color: #f0f0f0;
-  color: #000000;
-  padding: 1em;
-  overflow-x: auto;
-  border-radius: 4px;
+  max-width: var(--max-width);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }

@@ -1,7 +1,7 @@
 ---
 title: "CAPC AI パッケージ"
 description: "弊社製品「CAPC」に付属のAIパッケージのご紹介です。"
-image: "/images/products/cabipc.png"
+image: "/images/products/product_placeholder.png"
 created_at: 20241004
 last_updated: 20241004
 category: "oss"
