@@ -57,24 +57,13 @@ export default async () => {
 					src={`${BASE_PATH}/images/bgHeader.png`}
 					quality={100}
 					fill
-					style={{
-						objectFit: "cover",
-					}}
+					className={styles.bgImage}
 				/>
 				<div
-					style={{
-						position: "absolute",
-						inset: 0,
-						zIndex: 10,
-						background:
-							"linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8))",
-					}}
+					className={styles.imageMask}
 				/>
 				<div
 					className={styles.titleContainer}
-					style={{
-						zIndex: 20,
-					}}
 				>
 					<h1 className={styles.title}>無人化・協働ロボットのお困りごとなら</h1>
 					<p className={styles.description}>

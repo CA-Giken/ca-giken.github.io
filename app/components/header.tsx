@@ -21,12 +21,19 @@ export const Header = () => {
 					aria-controls="navMenu"
 					onClick={toggleMenu}
 				>
-					{isMenuOpen ? "閉じる" : "メニュー"}
+					{!isMenuOpen && "メニュー"}
 				</button>
 				<ul
 					id="navMenu"
 					className={`${styles.navLinks} ${isMenuOpen ? styles.active : ""}`}
 				>
+					<button
+						onClick={toggleMenu}
+						type="button"
+						className={`${styles.menuButton} ${isMenuOpen ? styles.active : ""}`}
+					>
+						閉じる
+					</button>
 					<li>
 						<Link href="/">ホーム</Link>
 					</li>
