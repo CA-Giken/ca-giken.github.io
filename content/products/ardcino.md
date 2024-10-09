@@ -1,16 +1,16 @@
 ---
 title: "DC + Arduino = ArDCino"
-description: "The cutting-edge Baitcasting control implementation for Arduino"
-image: "/images/products/OpenDCb.png"
+description: "ArduinoでDCを作る"
+image: "/images/products/ArDCino_Cardiff.png"
 created_at: 20240925
-last_updated: 20240925
+last_updated: 20241010
 category: "oss"
 archived: false
 ---
 
 # "ArDCino" opens the digital control technology
 
-![ArDCino](/images/products/OpenDCb.png)
+![ArDCino](/images/products/ArDCino_Cardiff.png)
 
 ## GitHub Repository
 
