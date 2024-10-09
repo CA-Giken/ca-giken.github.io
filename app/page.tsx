@@ -94,7 +94,7 @@ export default async () => {
 					</GridView>
 				</div>
 			</section>
-			<section>
+			<section className={styles.hero}>
 				<h2 className={styles.subheader}>
 					<Link href="/blogs">最新ニュース</Link>
 				</h2>

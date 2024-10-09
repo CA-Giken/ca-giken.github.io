@@ -19,6 +19,9 @@
   width: 100%;
   padding: var(--container-padding-vertical) var(--container-padding-horizontal);
   max-width: var(--max-width);
+  display: flex;
+  flex-direction: column;
+  align-self: center;
   text-align: center;
   margin-bottom: 2rem;
 }
