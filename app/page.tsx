@@ -11,6 +11,7 @@ import Link from "next/link";
 import nextConfig from "../next.config.mjs";
 import BlogCard from "./components/BlogCard.";
 import GridView from "./components/Grid";
+import { HomeJsonLd } from "./components/HomeJsonLd";
 import ProductCard from "./components/ProductCard";
 import { getAllContent } from "./markdown-fetch";
 
@@ -95,6 +96,7 @@ export default async () => {
 					</GridView>
 				</div>
 			</section>
+			<HomeJsonLd />
 		</div>
 	);
 };

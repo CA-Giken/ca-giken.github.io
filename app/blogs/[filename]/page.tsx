@@ -1,3 +1,4 @@
+import { BlogJsonLd } from "@/app/components/BlogJsonLd";
 import mdStyles from "@/app/github_markdown.module.css";
 import { baseUrl, blogsDirectory, siteInfo } from "@/constants/info";
 import type { ResolvingMetadata } from "next";
@@ -67,6 +68,7 @@ export default async ({ params }: Props) => {
 				// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 				dangerouslySetInnerHTML={{ __html: content }}
 			/>
+			<BlogJsonLd post={data} />
 		</div>
 	);
 };

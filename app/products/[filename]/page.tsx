@@ -1,3 +1,4 @@
+import { ProductJsonLd } from "@/app/components/ProductJsonLd";
 import mdStyles from "@/app/github_markdown.module.css";
 import { baseUrl, productsDirectory, siteInfo } from "@/constants/info";
 import type { ResolvingMetadata } from "next";
@@ -66,6 +67,7 @@ export default async ({ params }: Props) => {
 				// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 				dangerouslySetInnerHTML={{ __html: content }}
 			/>
+			<ProductJsonLd post={data} />
 		</div>
 	);
 };

@@ -19,6 +19,7 @@ export interface MarkdownData {
 	last_updated: Date;
 	category: string;
 	archived: boolean;
+	tags?: string[];
 }
 
 export async function getMarkdownContent(
