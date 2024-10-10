@@ -62,7 +62,7 @@ export default async ({ params }: Props) => {
 
 	return (
 		<div className={styles.container}>
-			<div
+			<article
 				className={mdStyles.markdownContainer}
 				// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 				dangerouslySetInnerHTML={{ __html: content }}

@@ -35,11 +35,13 @@ export default async () => {
 	return (
 		<div className={styles.container}>
 			<h1>製品紹介・開発事例</h1>
-			<GridView>
-				{products.map((product) => (
-					<ProductCard key={product.slug} data={product} />
-				))}
-			</GridView>
+			<section>
+				<GridView>
+					{products.map((product) => (
+						<ProductCard key={product.slug} data={product} />
+					))}
+				</GridView>
+			</section>
 		</div>
 	);
 };

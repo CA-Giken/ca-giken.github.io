@@ -29,13 +29,13 @@ export const metadata = {
 export default async function ContactUs() {
 	return (
 		<div className={styles.container}>
-			<div className={styles.markdownContainer}>
+			<section className={styles.markdownContainer}>
 				<h1>お問い合わせ</h1>
 				<p>
 					お問い合わせは以下のボタンよりお願いいたします。(メーラーが起動します。)
 				</p>
 				<p>TODO:</p>
-			</div>
+			</section>
 		</div>
 	);
 }

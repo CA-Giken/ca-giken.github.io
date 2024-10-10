@@ -37,8 +37,8 @@ export default async function AboutUs() {
 	const policyHtml = await markdownToHtml(policy.content);
 
 	return (
-		<div className={styles.container}>
-			<div
+		<article className={styles.container}>
+			<section
 				className={mdStyles.markdownContainer}
 				// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 				dangerouslySetInnerHTML={{ __html: aboutusHtml }}
@@ -46,11 +46,11 @@ export default async function AboutUs() {
 			<div style={{ height: 16 }}>
 				<span />
 			</div>
-			<div
+			<section
 				className={mdStyles.markdownContainer}
 				// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 				dangerouslySetInnerHTML={{ __html: policyHtml }}
 			/>
-		</div>
+		</article>
 	);
 }

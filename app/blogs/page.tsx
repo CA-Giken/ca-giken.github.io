@@ -35,11 +35,13 @@ export default async () => {
 	return (
 		<div className={styles.container}>
 			<h1>CA技研ニュース</h1>
-			<GridView>
-				{blogs.map((blog) => (
-					<BlogCard key={blog.slug} data={blog} />
-				))}
-			</GridView>
+			<section>
+				<GridView>
+					{blogs.map((blog) => (
+						<BlogCard key={blog.slug} data={blog} />
+					))}
+				</GridView>
+			</section>
 		</div>
 	);
 };
