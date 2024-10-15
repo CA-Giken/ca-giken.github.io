@@ -1,16 +1,3 @@
-.container {
-  background: rgb(var(--background-end-rgb));
-  padding: var(--container-padding-vertical) var(--container-padding-horizontal);
-  width: 100%;
-  max-width: var(--max-width);
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.section {
-  margin-bottom: 2rem;
-}
 
 .inputName {
   width: 100%;

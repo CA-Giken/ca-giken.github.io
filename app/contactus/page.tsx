@@ -1,6 +1,8 @@
 import { baseUrl, siteInfo } from "@/constants/info";
 import styles from "./page.module.css";
 
+import Form from "./form";
+
 const title = `お問い合わせ - ${siteInfo.title}`;
 const description = "CA技研へのお問い合わせはこちら";
 
@@ -29,12 +31,9 @@ export const metadata = {
 export default async function ContactUs() {
 	return (
 		<div className={styles.container}>
-			<section className={styles.markdownContainer}>
-				<h1>お問い合わせ</h1>
-				<p>
-					お問い合わせは以下のボタンよりお願いいたします。(メーラーが起動します。)
-				</p>
-				<p>TODO:</p>
+			<section className={styles.section}>
+				<h2>お問い合わせ内容</h2>
+				<Form />
 			</section>
 		</div>
 	);
