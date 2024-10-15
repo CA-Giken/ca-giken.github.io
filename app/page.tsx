@@ -10,6 +10,7 @@ import {
 import Link from "next/link";
 import nextConfig from "../next.config.mjs";
 import BlogCard from "./components/BlogCard.";
+import { ButtonLink } from "./components/ButtonLink";
 import GridView from "./components/Grid";
 import { HomeJsonLd } from "./components/HomeJsonLd";
 import ProductCard from "./components/ProductCard";
@@ -70,6 +71,7 @@ export default async () => {
 					<p className={styles.description}>
 						問題設備・遊休装置を再生 「自動化リノベーション」
 					</p>
+					<ButtonLink label={"お問い合わせ"} href={"/contactus"}/>
 				</div>
 			</section>
 			<section className={styles.hero}>
