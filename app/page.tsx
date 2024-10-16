@@ -67,7 +67,7 @@ export default async () => {
 				<div
 					className={styles.titleContainer}
 				>
-					<h1 className={styles.title}>無人化・協働ロボットのお困りごとなら</h1>
+					<h1 className={styles.title}>自動化・協働ロボットのお困りごとなら</h1>
 					<p className={styles.description}>
 						問題設備・遊休装置を再生 「自動化リノベーション」
 					</p>
