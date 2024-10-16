@@ -17,6 +17,7 @@
 
 .bgImage {
   object-fit: cover;
+  filter: blur(10px)
 }
 
 .imageMask {
