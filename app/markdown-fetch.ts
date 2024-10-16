@@ -77,6 +77,13 @@ export async function markdownToHtml(markdown: string) {
 	return result.toString();
 }
 
-const ISOStringToDate = (isostring: string): Date => {
-	return new Date(isostring);
+const ISOStringToDate = (ymd: number): Date => {
+	// 日付文字列をパースする（形式：YYYYMMDD）
+  const year = Math.floor(ymd / 10000);
+	const month = Math.floor((ymd % 10000) / 100) - 1;
+	const day = ymd % 100;
+
+  // Date オブジェクトを作成
+  const date = new Date(Date.UTC(year, month, day));
+	return date;
 };
