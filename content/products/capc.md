@@ -9,7 +9,7 @@ archived: false
 ---
 
 # CAPC - キャビコン／制御盤キャビネット型PC
-
+![ArDCino](/images/products/capc_preview.svg)
 ## 仕様比較
 
 | 項目 | キャビコンFA-PC | CONTEC/VPC-1700-BS3811AH101W1000 | VECOW/SPC-5600 |
