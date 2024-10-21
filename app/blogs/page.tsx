@@ -8,17 +8,6 @@ import styles from "./page.module.css";
 const title = `ニュース - ${siteInfo.title}`;
 const description = "CA技研からのお知らせです。";
 
-export const breadcrumbs = [
-	{
-		name: "ホーム",
-		href: "/",
-	},
-	{
-		name: "製品紹介・開発事例",
-		href: "/products",
-	},
-];
-
 export const metadata = {
 	title: title,
 	description: description,
