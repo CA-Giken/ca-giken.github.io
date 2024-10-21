@@ -69,3 +69,7 @@ category: "support"
 archived: false
 ---
 ```
+
+### Theme colors
+- Accent: rgb(0, 197, 255), #33ccff
+- Accent2: rgb(253, 153, 0), #ff9900

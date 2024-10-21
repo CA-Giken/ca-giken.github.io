@@ -18,7 +18,8 @@
   --background-start-rgb: 192, 219, 220;
   --background-end-rgb: 255, 255, 255;
 
-  --accent-rgb: 1, 65, 255;
+  --accent-rgb: 0, 197, 255;
+  --accent-strong-rgb: 253, 152, 5;
 
   --primary-glow: conic-gradient(
     from 180deg at 50% 50%,
@@ -47,7 +48,7 @@
 
   --callout-rgb: 238, 240, 241;
   --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
+  --card-rgb: 224, 224, 224;
   --card-border-rgb: 131, 134, 135;
 
   --min-margin:1rem;

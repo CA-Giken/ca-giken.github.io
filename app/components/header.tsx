@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { DiagonalBackground } from "./DiagonalBackground";
 import styles from "./header.module.css";
 
 export const Header = () => {
@@ -10,6 +11,7 @@ export const Header = () => {
 
 	return (
 		<header className={styles.header}>
+			<DiagonalBackground />
 			<div className={styles.logo}>
 				<Link href="/">CA技研</Link>
 			</div>

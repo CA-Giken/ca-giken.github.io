@@ -1,0 +1,23 @@
+.diagonalBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 84px;
+  height: 48px;
+  z-index: -1;
+  background-color: rgb(var(--accent-strong-rgb));
+  transform: skew(0deg, -30deg);
+  transform-origin: top left;
+}
+
+.diagonalBackground2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110px;
+  height: 64px;
+  z-index: -2;
+  background-color: rgb(var(--accent-rgb));
+  transform: skew(0deg, -30deg);
+  transform-origin: top left;
+}
