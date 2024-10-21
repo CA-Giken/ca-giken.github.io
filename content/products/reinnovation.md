@@ -28,7 +28,7 @@ archived: false
 <details>
 
 2Dセンサー(カメラ)とロボットなどの装置との組み合わせは、従来より行われてきましたが、3Dセンサへの置き換えが広まりつつあります。よって取得される「点群」データを処理し、ワークの「認識」「測位」「寸法計測」を行います。
-![Saisun3D](/images/products/saisun3d.png)
+![Saisun3D](/images/products/renovation/saisun3d.png)
 
 #### 優位性
 - 実寸情報である  
@@ -52,7 +52,7 @@ archived: false
 可搬重量を超えるワークを、重量補助装置(バランサー)との協調動作により搬送するシステム。
 数10Kgfの重量物をハンドリングするには、かなりの大型のロボットが必要になります。従来ヒトが行っていた作業スペースにロボット導入する場合、大型のロボットを設置することはスペース的に不可能である場合、このソリューションが有効です。
 
-![PowerBot](/images/products/powerbot.png)
+![PowerBot](/images/products/renovation/powerbot.png)
 </details>
 
 ### メカトロ機器開発
@@ -60,7 +60,7 @@ archived: false
 
 特殊ハンドなど、メカトロ機器の設計・製作を行います。
 #### 摘果選定用ハンド  
-![Naro](/images/products/n_hand.png)
+![Naro](/images/products/renovation/n_hand.png)
 </details>
 
 ## ムービー
@@ -68,7 +68,7 @@ archived: false
 <details>
 「重量物搬送システム」と「3D認識・測位」技術を組み合わせて、バケット内のクランクシャフトを取り出し・搬送する装置です。
 
-![CSP](/images/products/csp.png)
+![CSP](/images/products/renovation/csp.png)
 </details>
 
 ＊＊＊＊＊＊＊動画公開準備中＊＊＊＊＊＊＊＊
