@@ -52,7 +52,6 @@ export const BlogJsonLd = ({ post }: { post: MarkdownData }) => {
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
-      name: "パンくずリスト",
       itemListElement: [
         {
           "@type": "ListItem",
@@ -70,7 +69,6 @@ export const BlogJsonLd = ({ post }: { post: MarkdownData }) => {
           "@type": "ListItem",
           position: 3,
           name: post.title,
-          item: `${siteInfo.blogPage.url}/${post.slug}`,
         }
       ]
     }
@@ -79,7 +77,9 @@ export const BlogJsonLd = ({ post }: { post: MarkdownData }) => {
   return (
     <>
       <Script
+        id="blog-json-ld"
         type="application/ld+json"
+        strategy='beforeInteractive'
         // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonld) }}
       />

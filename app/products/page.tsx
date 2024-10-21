@@ -1,5 +1,6 @@
 import ProductCard from "@/app/components/ProductCard";
 import { baseUrl, productsDirectory, siteInfo } from "@/constants/info";
+import { BreadcrumbList } from "../components/Breadcrumb";
 import GridView from "../components/Grid";
 import { type MarkdownData, getAllContent } from "../markdown-fetch";
 import styles from "./page.module.css";
@@ -29,11 +30,23 @@ export const metadata = {
 	},
 };
 
+export const breadcrumbs = [
+	{
+		name: "ホーム",
+		href: "/",
+	},
+	{
+		name: "製品紹介・開発事例",
+		href: "/products",
+	}
+]
+
 export default async () => {
 	const products: MarkdownData[] = await getAllContent(productsDirectory);
 
 	return (
 		<div className={styles.container}>
+			<BreadcrumbList items={breadcrumbs}/>
 			<h1>製品紹介・開発事例</h1>
 			<section>
 				<GridView>

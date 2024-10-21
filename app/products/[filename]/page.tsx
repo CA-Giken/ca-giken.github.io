@@ -1,3 +1,4 @@
+import { BreadcrumbList } from "@/app/components/Breadcrumb";
 import { ProductJsonLd } from "@/app/components/ProductJsonLd";
 import mdStyles from "@/app/github_markdown.module.css";
 import { baseUrl, productsDirectory, siteInfo } from "@/constants/info";
@@ -8,6 +9,7 @@ import {
 	getMarkdownContent,
 	markdownToHtml,
 } from "../../markdown-fetch";
+import { breadcrumbs as parentBreadcrumbs } from "../page";
 import styles from "./page.module.css";
 
 const dir = productsDirectory;
@@ -60,8 +62,16 @@ export default async ({ params }: Props) => {
 	const data: MarkdownData = await getMarkdownContent(dir, params.filename);
 	const content = await markdownToHtml(data.content);
 
+	const breadcrumbs = [
+		...parentBreadcrumbs,
+		{
+			name: data.title,
+			href: `/products/${params.filename}`,
+		},
+	];
 	return (
 		<div className={styles.container}>
+			<BreadcrumbList items={breadcrumbs} />
 			<article
 				className={mdStyles.markdownContainer}
 				// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>

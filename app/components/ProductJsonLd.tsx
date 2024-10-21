@@ -79,6 +79,7 @@ export const ProductJsonLd = ({ post }: { post: MarkdownData }) => {
     <>
       <Script
         type="application/ld+json"
+        strategy='beforeInteractive'
         // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonld) }}
       />

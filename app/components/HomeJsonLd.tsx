@@ -30,20 +30,6 @@ export const HomeJsonLd = () => {
       "@type": "WebSite",
       name: siteInfo.title,
       url: siteInfo.url,
-    },
-    // パンくずリスト
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      name: "パンくずリスト",
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: siteInfo.title,
-          item: siteInfo.url,
-        }
-      ]
     }
   ]
 
@@ -51,6 +37,7 @@ export const HomeJsonLd = () => {
     <>
       <Script
         type="application/ld+json"
+        strategy='beforeInteractive'
         // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonld) }}
       />
