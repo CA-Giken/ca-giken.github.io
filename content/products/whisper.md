@@ -5,7 +5,7 @@ image: "/images/products/capc_ai_icon_2.png"
 created_at: 20241004
 last_updated: 20241016
 category: "oss"
-archived: false
+archived: true
 ---
 
 ## #1 OpenAI Whisperを導入した音声駆動型トラブルシューティングソリューション
