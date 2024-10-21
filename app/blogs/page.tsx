@@ -1,5 +1,6 @@
 import { baseUrl, blogsDirectory, siteInfo } from "@/constants/info";
 import BlogCard from "../components/BlogCard.";
+import { BreadcrumbList } from "../components/Breadcrumb";
 import GridView from "../components/Grid";
 import { type MarkdownData, getAllContent } from "../markdown-fetch";
 import styles from "./page.module.css";
@@ -15,8 +16,8 @@ export const breadcrumbs = [
 	{
 		name: "製品紹介・開発事例",
 		href: "/products",
-	}
-]
+	},
+];
 
 export const metadata = {
 	title: title,
@@ -42,9 +43,20 @@ export const metadata = {
 
 export default async () => {
 	const blogs: MarkdownData[] = await getAllContent(blogsDirectory);
+	const breadcrumbs = [
+		{
+			name: "ホーム",
+			href: "/",
+		},
+		{
+			name: "ニュース",
+			href: "/blogs",
+		},
+	];
 
 	return (
 		<div className={styles.container}>
+			<BreadcrumbList items={breadcrumbs} />
 			<h1>CA技研ニュース</h1>
 			<section>
 				<GridView>

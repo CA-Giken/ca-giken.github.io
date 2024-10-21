@@ -10,7 +10,6 @@ import {
 	getMarkdownContent,
 	markdownToHtml,
 } from "../../markdown-fetch";
-import { breadcrumbs as parentBreadcrumbs } from "../page";
 import styles from "./page.module.css";
 
 const dir = blogsDirectory;
@@ -63,10 +62,17 @@ export default async ({ params }: Props) => {
 	const data: MarkdownData = await getMarkdownContent(dir, params.filename);
 	const content = await markdownToHtml(data.content);
 	const breadcrumbs = [
-		...parentBreadcrumbs,
+		{
+			name: "ホーム",
+			href: "/",
+		},
+		{
+			name: "ニュース",
+			href: "/blogs",
+		},
 		{
 			name: data.title,
-			href: `/products/${params.filename}`,
+			href: `/blogs/${params.filename}`,
 		},
 	];
 	return (

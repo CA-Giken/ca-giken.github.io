@@ -30,23 +30,21 @@ export const metadata = {
 	},
 };
 
-export const breadcrumbs = [
-	{
-		name: "ホーム",
-		href: "/",
-	},
-	{
-		name: "製品紹介・開発事例",
-		href: "/products",
-	}
-]
-
 export default async () => {
 	const products: MarkdownData[] = await getAllContent(productsDirectory);
-
+	const breadcrumbs = [
+		{
+			name: "ホーム",
+			href: "/",
+		},
+		{
+			name: "製品紹介・開発事例",
+			href: "/products",
+		},
+	];
 	return (
 		<div className={styles.container}>
-			<BreadcrumbList items={breadcrumbs}/>
+			<BreadcrumbList items={breadcrumbs} />
 			<h1>製品紹介・開発事例</h1>
 			<section>
 				<GridView>
