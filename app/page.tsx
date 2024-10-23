@@ -87,8 +87,8 @@ export default async () => {
 						))}
 					</GridView>
 					<div className={styles.readmore}>
-						<Link href="/products">
-							<FontAwesomeIcon icon={faArrowRight} />すべての製品を見る
+						<Link href="/products" style={{ display: "inline-flex", alignItems: "center"}}>
+							<FontAwesomeIcon icon={faArrowRight} width={20} style={{marginRight: "4px"}}/>すべての製品を見る
 						</Link>
 					</div>
 				</div>
@@ -104,8 +104,8 @@ export default async () => {
 						))}
 					</GridView>
 					<div className={styles.readmore}>
-						<Link href="/blogs">
-							<FontAwesomeIcon icon={faArrowRight} />すべてのニュースを見る
+						<Link href="/blogs" style={{ display: "inline-flex", alignItems: "center"}}>
+							<FontAwesomeIcon icon={faArrowRight} size="lg" width={20} alignmentBaseline="baseline"  style={{marginRight: "4px"}}/> すべてのニュースを見る
 						</Link>
 					</div>
 				</div>
