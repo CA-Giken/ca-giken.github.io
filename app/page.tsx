@@ -7,6 +7,8 @@ import {
 	productsDirectory,
 	siteInfo,
 } from "@/constants/info";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import nextConfig from "../next.config.mjs";
 import BlogCard from "./components/BlogCard.";
@@ -84,6 +86,11 @@ export default async () => {
 							<ProductCard key={product.slug} data={product} />
 						))}
 					</GridView>
+					<div className={styles.readmore}>
+						<Link href="/products">
+							<FontAwesomeIcon icon={faArrowRight} />すべての製品を見る
+						</Link>
+					</div>
 				</div>
 			</section>
 			<section className={styles.hero}>
@@ -96,6 +103,11 @@ export default async () => {
 							<BlogCard key={blog.slug} data={blog} />
 						))}
 					</GridView>
+					<div className={styles.readmore}>
+						<Link href="/blogs">
+							<FontAwesomeIcon icon={faArrowRight} />すべてのニュースを見る
+						</Link>
+					</div>
 				</div>
 			</section>
 			<HomeJsonLd />

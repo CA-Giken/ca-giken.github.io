@@ -5,6 +5,8 @@
   border-bottom: 1px solid rgb(var(--foreground-rgb));
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1);
   z-index: 1;
+  position: fixed;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: stretch;
@@ -20,7 +22,6 @@
   align-items: center;
   font-size: 1.5rem;
   font-weight: bold;
-  padding: 1rem;
   margin-left: 5rem;
 }
 
@@ -28,13 +29,19 @@
   display: none;
   background: none;
   border: none;
-  padding: 1rem;
   font-size: 1rem;
   cursor: pointer;
+  margin-right: 1rem;
 }
 
 .menuButton:hover {
   background-color: rgba(var(--foreground-rgb), 0.1);
+}
+
+.menuClose {
+  display: none;
+  background: none;
+  border: none;
 }
 
 .navLinks {
@@ -72,6 +79,15 @@
     z-index: 1001;
   }
 
+  .menuClose {
+    display: block;
+    z-index: 1001;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-align: end;
+  }
+
   .navLinks {
     position: fixed;
     display: none;
@@ -92,6 +108,11 @@
     width: 100%;
     padding: 1rem 1rem;
     font-size: 1.5rem;
+  }
+
+  .navLinks li:hover {
+    background-color: rgba(var(--foreground-rgb), 0.1);
+    color: rgb(var(--foreground-rgb));
   }
 
   .navLinks.active {

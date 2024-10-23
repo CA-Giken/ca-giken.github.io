@@ -63,6 +63,11 @@
   margin-bottom: 1rem;
 }
 
+.readmore {
+  font-size: 1.25rem;
+  text-align: right;
+}
+
 .titleContainer {
   height: 100%;
   position: relative;

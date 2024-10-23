@@ -32,24 +32,24 @@ export const Header = () => {
 					<button
 						onClick={toggleMenu}
 						type="button"
-						className={`${styles.menuButton} ${isMenuOpen ? styles.active : ""}`}
+						className={`${styles.menuClose} ${isMenuOpen ? styles.active : ""}`}
 					>
 						閉じる
 					</button>
 					<li>
-						<Link href="/">ホーム</Link>
+						<Link href="/" onClick={() => setIsMenuOpen(false)}>ホーム</Link>
 					</li>
 					<li>
-						<Link href="/products">製品情報</Link>
+						<Link href="/products" onClick={() => setIsMenuOpen(false)}>製品情報</Link>
 					</li>
 					<li>
-						<Link href="/blogs">ニュース</Link>
+						<Link href="/blogs" onClick={() => setIsMenuOpen(false)}>ニュース</Link>
 					</li>
 					<li>
-						<Link href="/aboutus">当社について</Link>
+						<Link href="/aboutus" onClick={() => setIsMenuOpen(false)}>当社について</Link>
 					</li>
 					<li>
-						<Link href="/contactus">お問い合わせ</Link>
+						<Link href="/contactus" onClick={() => setIsMenuOpen(false)}>お問い合わせ</Link>
 					</li>
 				</ul>
 			</nav>
