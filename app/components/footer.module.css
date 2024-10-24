@@ -6,9 +6,24 @@
   color: #fff;
 }
 
-.footerContainer {
+.container {
   max-width: var(--max-width);
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+}
+
+.footerLink {
+  color: #fff;
+  margin: 0 1rem;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+
+.copyright {
+  text-align: center;
 }

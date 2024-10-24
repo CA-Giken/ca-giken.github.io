@@ -11,7 +11,7 @@ export const metadata = {
 	title: title,
 	description: description,
 	alternates: {
-		canonical: `${baseUrl}/aboutus`,
+		canonical: `${baseUrl}/privacy-policy`,
 	},
 	openGraph: {
 		type: "website",
@@ -29,16 +29,16 @@ export const metadata = {
 	},
 };
 
-export default async function AboutUs() {
-	const aboutus = await getMarkdownContent(mdRoot, "aboutus");
-	const aboutusHtml = await markdownToHtml(aboutus.content);
+export default async function PrivacyPolicy() {
+	const data = await getMarkdownContent(mdRoot, "privacy-policy");
+	const html = await markdownToHtml(data.content);
 
 	return (
 		<article className={styles.container}>
 			<section
 				className={mdStyles.markdownContainer}
 				// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
-				dangerouslySetInnerHTML={{ __html: aboutusHtml }}
+				dangerouslySetInnerHTML={{ __html: html }}
 			/>
 		</article>
 	);

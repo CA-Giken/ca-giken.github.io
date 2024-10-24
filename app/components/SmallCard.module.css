@@ -1,0 +1,48 @@
+.cardImage {
+    align-self: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.cardTitle {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.description {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        gap: 1rem;
+    }
+    .card {
+        width: 216px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid {
+        gap: 1.5rem;
+    }
+}

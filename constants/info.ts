@@ -1,5 +1,6 @@
 export const blogsDirectory = "content/blogs";
 export const productsDirectory = "content/products";
+export const mdRoot = "content";
 
 // Form entries
 export const googleFormUrl =
