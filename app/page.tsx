@@ -66,39 +66,56 @@ export default async () => {
 				/>
 				<div className={styles.imageMask} />
 				<div className={styles.titleContainer}>
-					<h1 className={styles.title}>自動化・協働ロボットのお困りごとなら</h1>
+					<h1 className={styles.title}>製造設備・プロセスをDX</h1>
 					<p className={styles.description}>
-						問題設備・遊休装置を再生 「自動化リノベーション」
+						CA技研は「
+						<Link
+							href="/products/reinnovation"
+							className={styles.descriptionLink}
+						>
+							自動化リノベーション
+						</Link>
+						」で実現します
 					</p>
 					<ButtonLink label={"お問い合わせ"} href={"/contactus"} />
 				</div>
 			</section>
 			<section className={styles.hero}>
-				<h2 className={styles.subheader}>
-					CA技研は製造現場の成長を技術的に支援いたします
-				</h2>
+				<h2 className={styles.subheader}>自動化リノベーション とは</h2>
 				<div className={styles.content}>
 					<p>
-						お客様の製造現場における課題を解決するとともに、新技術・ロボットの導入を検証フェーズからサポートいたします。
+						リフォームが「保守」にあたるもの対して、リノベーションは「改造」や
+						「DX」(トランスフォーム)にあたるものと、私たちは捉えています。
 					</p>
+					<p>
+						CA技研は、設備・プロセスの リノベーション
+						を推進することで、日本の製造業の競争力アップに貢献します。
+					</p>
+					<Link href="/products/reinnovation" className={styles.link}>
+						<p>私たちの「自動化リノベーション」への取り組みを詳しく見る</p>
+					</Link>
+				</div>
+			</section>
+			<section className={styles.hero}>
+				<h2 className={styles.subheader}>
+					CA技研は製造現場の技術革新を後押しします
+				</h2>
+				<div className={styles.content}>
 					<SmallCardGrid>
 						<SmallCard
-							title={"AIパッケージ導入"}
-							image={"/images/products/capc_ai_icon_2.png"}
+							title={"エッジAIの導入"}
 							href={"/products/capc_ai"}
 							description={"音声認識や物体検知など最新AIパッケージを現場に導入"}
 						/>
 						<SmallCard
-							title={"協働ロボット支援"}
-							image={"/images/products/renovation.png"}
+							title={"ロボットの高度\nインテグレーション"}
 							href={"/products/renovation"}
 							description={
 								"3Dカメラやロボットのインテグレーションをハード・ソフトで支援"
 							}
 						/>
 						<SmallCard
-							title={"検証・PoC開発"}
-							image={"/images/products/renovation/csp.png"}
+							title={"PoC・\nプロトタイプ開発"}
 							href={"/products/renovation"}
 							description={"新技術の導入検証やプロトタイプ開発を迅速対応"}
 						/>

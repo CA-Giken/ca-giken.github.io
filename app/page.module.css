@@ -1,94 +1,99 @@
 .container {
-  background: rgb(var(--background-end-rgb));
-  width: 100%;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+	background: rgb(var(--background-end-rgb));
+	width: 100%;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 .topView {
-  width: 100%;
-  height: 80vh;
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 1rem;
+	width: 100%;
+	height: 80vh;
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 1rem;
 }
 
 .bgImage {
-  object-fit: cover;
-  filter: blur(10px)
+	object-fit: cover;
+	filter: blur(10px);
 }
 
 .imageMask {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.8)
-    );
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
 }
 
 .hero {
-  width: 100%;
-  padding: var(--container-padding-vertical) var(--container-padding-horizontal);
-  max-width: var(--max-width);
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  text-align: center;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
+	width: 100%;
+	padding: var(--container-padding-vertical) var(--container-padding-horizontal);
+	max-width: var(--max-width);
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+	text-align: center;
+	margin-bottom: 1rem;
+	margin-top: 1rem;
 }
 
 .title {
-  color: #fff;
-  font-size: 2rem;
-  margin-bottom: 1rem;
+	color: #fff;
+	font-size: 2rem;
+	margin-bottom: 1rem;
 }
 
 .description {
-  color: #fff;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  text-align: center;
+	color: #fff;
+	font-size: 1.5rem;
+	margin-bottom: 1.5rem;
+	text-align: center;
+}
+
+.descriptionLink {
+	color: rgb(var(--accent-rgb));
 }
 
 .subheader {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
 }
 
 .content {
-  margin-bottom: 1rem;
+	margin-bottom: 1rem;
 }
 
 .readmore {
-  font-size: 1.25rem;
-  text-align: right;
-  margin: 1rem 0;
+	font-size: 1.25rem;
+	text-align: right;
+	margin: 1rem 0;
+}
+
+.link {
+	margin: 1rem;
+	color: rgb(var(--accent-rgb));
 }
 
 .titleContainer {
-  height: 100%;
-  position: relative;
-  margin: 0rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+	height: 100%;
+	position: relative;
+	margin: 0rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
-@media (min-width: 768px){
-  .imageContainer {
-    height: 250px;
-  }
+@media (min-width: 768px) {
+	.imageContainer {
+		height: 250px;
+	}
 }
 
 @media (min-width: 1024px) {
-  .imageContainer {
-    height: 300px
-  }
+	.imageContainer {
+		height: 300px;
+	}
 }
