@@ -80,7 +80,7 @@ export default async () => {
 					<ButtonLink label={"お問い合わせ"} href={"/contactus"} />
 				</div>
 			</section>
-			<section className={styles.hero}>
+			{/* <section className={styles.hero}>
 				<h2 className={styles.subheader}>自動化リノベーション とは</h2>
 				<div className={styles.content}>
 					<p>
@@ -95,7 +95,7 @@ export default async () => {
 						<p>私たちの「自動化リノベーション」への取り組みを詳しく見る</p>
 					</Link>
 				</div>
-			</section>
+			</section> */}
 			<section className={styles.hero}>
 				<h2 className={styles.subheader}>
 					CA技研は製造現場の技術革新を後押しします
