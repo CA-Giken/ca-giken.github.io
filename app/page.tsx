@@ -13,6 +13,7 @@ import Link from "next/link";
 import nextConfig from "../next.config.mjs";
 import BlogCard from "./components/BlogCard.";
 import { ButtonLink } from "./components/ButtonLink";
+import { FeaturedTopics } from "./components/FeaturedTopics";
 import GridView from "./components/Grid";
 import { HomeJsonLd } from "./components/HomeJsonLd";
 import ProductCard from "./components/ProductCard";
@@ -80,22 +81,34 @@ export default async () => {
 					<ButtonLink label={"お問い合わせ"} href={"/contactus"} />
 				</div>
 			</section>
-			{/* <section className={styles.hero}>
-				<h2 className={styles.subheader}>自動化リノベーション とは</h2>
-				<div className={styles.content}>
-					<p>
-						リフォームが「保守」にあたるもの対して、リノベーションは「改造」や
-						「DX」(トランスフォーム)にあたるものと、私たちは捉えています。
-					</p>
-					<p>
-						CA技研は、設備・プロセスの リノベーション
-						を推進することで、日本の製造業の競争力アップに貢献します。
-					</p>
-					<Link href="/products/reinnovation" className={styles.link}>
-						<p>私たちの「自動化リノベーション」への取り組みを詳しく見る</p>
-					</Link>
-				</div>
-			</section> */}
+			<section className={styles.hero}>
+				<h2 className={styles.subheader}>トピックス</h2>
+				<FeaturedTopics
+					articles={[
+						{
+							title: "「自動化リノベーション」とは？",
+							href: "/products/reinnovation",
+							image: "/images/products/renovation/title.png",
+							description:
+								"弊社が掲げる取り組みである「自動化リノベーション」とは何か？ 日本の製造業の競争力アップに貢献するべく、CA技研は「自動化リノベーション」を推進しています。",
+						},
+						{
+							title: "制御盤キャビネット型PC「CAPC」v1.0 リリース",
+							href: "/products/capc",
+							image: "",
+							description:
+								"弊社製品「CAPC」は、製造現場に最適化された高性能PCの製造・販売を行っております。3D や AI などの先端デジタル技術導入に最適なPCです。",
+						},
+						{
+							title: "AIパッケージ「CAPC AI」v1.0 リリース",
+							href: "/products/capc-ai",
+							image: "",
+							description:
+								"音声認識をはじめとするAIパッケージを提供しております。",
+						},
+					]}
+				/>
+			</section>
 			<section className={styles.hero}>
 				<h2 className={styles.subheader}>
 					CA技研は製造現場の技術革新を後押しします

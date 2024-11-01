@@ -65,10 +65,15 @@
 	margin-bottom: 1rem;
 }
 
+/**  右寄せ　*/
 .readmore {
 	font-size: 1.25rem;
-	text-align: right;
 	margin: 1rem 0;
+	text-align: right;
+	color: rgb(var(--accent-rgb));
+}
+.readmore:hover {
+	text-decoration: underline;
 }
 
 .link {
