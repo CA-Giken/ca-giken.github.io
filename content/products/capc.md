@@ -9,7 +9,7 @@ archived: false
 ---
 
 # CAPC - 制御盤キャビネット型PC
-![ArDCino](/images/products/capc_preview.svg)
+![Preview](/images/products/capc/preview.svg)
 ## 仕様
 
 | 項目 | 基本モデル | GPU内蔵モデル |
@@ -38,3 +38,6 @@ archived: false
 | LAN | 2 | &larr; |
 | USB | 4 | &larr; |
 | ディスプレイ | HDMI×1、DVI×1 | &larr; |
+
+## 外形図
+![Dimension](/images/products/capc/dimension.svg)
