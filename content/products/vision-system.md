@@ -1,7 +1,7 @@
 ---
 title: "Vision System"
 description: "CA技研は、ロボットOS「ROS」ベースのビジョンシステムを提供しています。装置の制御から、導入前のシミュレーションまでカバーします。"
-image: "/images/products/vison-system.png"
+image: "/images/products/vision-system.png"
 created_at: 20241210
 last_updated: 20900101
 category: "oss"
