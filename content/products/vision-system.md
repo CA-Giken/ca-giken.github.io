@@ -14,10 +14,10 @@ archived: false
 
 CA技研は、ロボット開発フレームワーク「[Robot Operating System (ROS)](https://www.ros.org/)」をビジョンシステムに採用しています。
 
-![構成](/images/products/rvs/diagram.png)
+![構成](/images/products/rvs/diagram.svg)
 
 ## ビジョンソフトウェア
-「ビジョンソフトウェア」は、様々なメーカのロボット、及びカメラ(3D)を統合する、自動化リノベーションの中核ツールです。
+「ビジョンソフトウェア」は、様々なメーカのロボット、及びカメラ(3D)を統合する、[自動化リノベーション](./reinnovation.md)の中核ツールです。
 
 - ROSベース
   - パッケージ化された様々なソフトウェアが利用できます。
