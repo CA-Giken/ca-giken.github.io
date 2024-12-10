@@ -3,7 +3,7 @@ title: "DC for PIC Assembler"
 description: "Old but stable Baitcasting control for PIC"
 image: "/images/products/OldDC.png"
 created_at: 20241002
-last_updated: 20241002
+last_updated: 19990101
 category: "oss"
 archived: true
 ---

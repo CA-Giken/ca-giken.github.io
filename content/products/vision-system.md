@@ -1,6 +1,6 @@
 ---
-title: "Vision System"
-description: "CA技研は、ロボットOS「ROS」ベースのビジョンシステムを提供しています。装置の制御から、導入前のシミュレーションまでカバーします。"
+title: "統合ビジョンソフトウェア(IVS)"
+description: "統合ビジョンソフトウェアは、様々な機器を統合し、装置の制御から導入前シミュレーションまでをカバーします。"
 image: "/images/products/vision-system.png"
 created_at: 20241210
 last_updated: 20900101
@@ -10,14 +10,10 @@ archived: false
 
 ![タイトル](/images/products/rvs/title.png)
 
-# ビジョンシステム
-
-CA技研は、ロボット開発フレームワーク「[Robot Operating System (ROS)](https://www.ros.org/)」をビジョンシステムに採用しています。
-
+# 統合ビジョンソフトウェア(IVS)
 ![構成](/images/products/rvs/diagram.svg)
 
-## ビジョンソフトウェア
-「ビジョンソフトウェア」は、様々なメーカのロボット、及びカメラ(3D)を統合する、[自動化リノベーション](./reinnovation)の中核ツールです。
+「IVS」は、様々なメーカのロボット、及びカメラ(3D)を統合する、[自動化リノベーション](./reinnovation)の中核ツールです。
 
 - ROSベース
   - パッケージ化された様々なソフトウェアが利用できます。
