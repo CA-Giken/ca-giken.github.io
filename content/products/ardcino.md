@@ -20,7 +20,7 @@ Shimano DCが発売されて20年が経過した。8Bitの乗算命令すらな�
 - フルオートマチック  
 **AdDCinoは[張力制御技術](https://www.mitsubishielectric.co.jp/fa/products/drv/tencon/pmerit/case/whats/whats_tencon_ba03.html)をリールに組み込みました。**  
 この技術によって、ダイヤルなどによるブレーキ選択が不要となります。ただキャストするだけで、あとはリールに組み込まれた制御アルゴリズムが、フルオートでブレーキ制御をします。
-![TensionControl](/images/products/ardcino/ig02.png)
+![TensionControl](/images/products/ardcino/fig02.png)
 - IoT化  
 電池を装着すれば、スマホと接続が出来、パラメータの書き換えや、キャストのロギングが可能です。もちろん自己発電でも回路は駆動するので、バッテリ無しでもキャストが可能です。
 ![IOT](/images/products/ardcino/fig03.png)
