@@ -3,7 +3,7 @@ title: "自動化リノベーション"
 description: "製造設備・プロセスをDX"
 image: "/images/products/renovation.png"
 created_at: 20241004
-last_updated: 21000101
+last_updated: 20241004
 category: "case"
 archived: false
 ---
