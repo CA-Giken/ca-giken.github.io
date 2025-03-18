@@ -23,7 +23,7 @@ import { getAllContent } from "./markdown-fetch";
 // For Github Pages
 const BASE_PATH = nextConfig.basePath ? nextConfig.basePath : "";
 
-const description = "問題設備・遊休装置を再生 「自動化リノベーション」";
+const description = "Going to the Edge";
 
 export const metadata = {
 	title: siteInfo.title,
@@ -67,17 +67,8 @@ export default async () => {
 				/>
 				<div className={styles.imageMask} />
 				<div className={styles.titleContainer}>
-					<h1 className={styles.title}>製造設備・プロセスをDX</h1>
-					<p className={styles.description}>
-						CA技研は「
-						<Link
-							href="/products/reinnovation"
-							className={styles.descriptionLink}
-						>
-							自動化リノベーション
-						</Link>
-						」で実現します
-					</p>
+					<h1 className={styles.title}>Going to the Edge.</h1>
+					<p className={styles.description}>CA技研は「エッジコンピューティング」の「先」を目指します</p>
 					<ButtonLink label={"お問い合わせ"} href={"/contactus"} />
 				</div>
 			</section>
@@ -85,13 +76,6 @@ export default async () => {
 				<h2 className={styles.subheader}>トピックス</h2>
 				<FeaturedTopics
 					articles={[
-						{
-							title: "「自動化リノベーション」とは？",
-							href: "/products/reinnovation",
-							image: "/images/products/renovation/title.png",
-							description:
-								"弊社が掲げる取り組みである「自動化リノベーション」とは何か？ 日本の製造業の競争力アップに貢献するべく、CA技研は「自動化リノベーション」を推進しています。",
-						},
 						{
 							title: "制御盤キャビネット型PC「CAPC」v1.0 リリース",
 							href: "/products/capc",
@@ -106,31 +90,30 @@ export default async () => {
 							description:
 								"音声認識をはじめとするAIパッケージを提供しております。",
 						},
+
 					]}
 				/>
 			</section>
 			<section className={styles.hero}>
 				<h2 className={styles.subheader}>
-					CA技研は製造現場の技術革新を後押しします
+					CA技研の「エッジコンピューティング」
 				</h2>
 				<div className={styles.content}>
 					<SmallCardGrid>
 						<SmallCard
-							title={"エッジAIの導入"}
+							title={"エッジAI"}
 							href={"/products/capc_ai"}
 							description={"音声認識や物体検知など最新AIパッケージを現場に導入"}
 						/>
 						<SmallCard
-							title={"ロボットの高度\nインテグレーション"}
-							href={"/products/renovation"}
-							description={
-								"3Dカメラやロボットのインテグレーションをハード・ソフトで支援"
-							}
+							title={"RTOS"}
+							href={"/products/ardcuino"}
+							description={"いまmmスケール世界の「RTOS」が熱い! FreeRTOS,mbedOS…など各種RTOSを導入"}
 						/>
 						<SmallCard
-							title={"PoC・\nプロトタイプ開発"}
-							href={"/products/renovation"}
-							description={"新技術の導入検証やプロトタイプ開発を迅速対応"}
+							title={"UI/UX"}
+							href={"/products/ros-gui"}
+							description={"Easy & Cool! エッジのUIを一新"}
 						/>
 					</SmallCardGrid>
 				</div>
