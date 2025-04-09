@@ -68,7 +68,7 @@ export default async () => {
 				<div className={styles.imageMask} />
 				<div className={styles.titleContainer}>
 					<h1 className={styles.title}>Going to the Edge.</h1>
-					<p className={styles.description}>CA技研は「エッジコンピューティング」の「先」を目指します</p>
+					<p className={styles.description}>CA技研は「エッジコンピューティング」の「その先」を目指します</p>
 					<ButtonLink label={"お問い合わせ"} href={"/contactus"} />
 				</div>
 			</section>
