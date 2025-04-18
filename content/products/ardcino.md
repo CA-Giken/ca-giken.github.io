@@ -1,6 +1,6 @@
 ---
 title: "ServoCAST"
-description: "ベイトリールの革新"
+description: "ベイトキャスティングリールの常識を変える"
 image: "/images/products/ServoCast.png"
 created_at: 20240925
 last_updated: 21000101
@@ -8,21 +8,16 @@ category: "oss"
 archived: false
 ---
 
-# テーマ  
-![Theme](/images/products/ardcino/flyer001.svg)
+![タイトル](/images/products/ServoCast.png)
 
-# シンプル  
-![Simple](/images/products/ardcino/flyer002.svg)
-
-# 自由  
-![Custom](/images/products/ardcino/flyer003.svg)
+# ServoCAST／ベイトキャスティングリールの常識を変える  
+ServoCASTは従来の電子制御ブレーキとは一線を画するブレーキシステムです。リール組込みの32bit高性能コンピュータが、リアルタイムに最適なブレーキを決定し、ブレーキ選択を過去のものにしました。ブレーキはリールに任せ、アングラーはシンプルに釣りに集中するのが、これからの常識です。
 
 # フライヤー  
 ![Flyer](/images/products/ardcino/flyer01.svg)
 
-# ServoCASTコンポーネント  
-![Compo](/images/products/ardcino/flyer02.svg)
-
+# ティーザー  
+![Teaser](/images/products/ardcino/teaser01.webm)
 
 ## Links
 - [プログラム書き換え](https://www.c-able.ne.jp/~hirai551/dl/dc/)
@@ -30,5 +25,3 @@ archived: false
 - [コード](https://github.com/KazukiHiraizumi/DCuino)
 - [Scheme](/images/products/ardcino/fig04.png)
 
-## Movies
-- https://www.youtube.com/shorts/YRz96Ap-nOw
