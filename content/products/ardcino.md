@@ -13,11 +13,9 @@ archived: false
 # ServoCAST／ベイトキャスティングリールの常識を変える  
 ServoCASTは従来の電子制御ブレーキとは一線を画するブレーキシステムです。リール組込みの32bit高性能コンピュータが、リアルタイムに最適なブレーキを決定し、ブレーキ選択を過去のものにしました。ブレーキはリールに任せ、アングラーはシンプルに釣りに集中するのが、これからの常識です。
 
-# フライヤー  
-![Flyer](/images/products/ardcino/flyer01.svg)
-
-# ティーザー  
-![Teaser](/images/products/ardcino/teaser01.webm)
+## プロモーション  
+[フライヤー](/images/products/ardcino/flyer01.svg)
+[ティーザー](/images/products/ardcino/teaser01.webm)
 
 ## Links
 - [プログラム書き換え](https://www.c-able.ne.jp/~hirai551/dl/dc/)
