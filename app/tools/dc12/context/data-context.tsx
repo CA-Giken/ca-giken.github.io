@@ -8,18 +8,23 @@ import type { DC12Data } from "../types/public-types";
 interface DataContextState {
 	data: DC12Data;
 	setData: React.Dispatch<React.SetStateAction<DC12Data>>;
+	selectedIndex: number;
+	setSelectedIndex: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const DataContext = createContext<DataContextState | undefined>(undefined);
 
 export function DataProvider({ children }: { children: ReactNode }) {
 	const [data, setData] = useState<DC12Data>(defaultDC12Data);
+	const [selectedIndex, setSelectedIndex] = useState<number>(0);
 
 	return (
 		<DataContext.Provider
 			value={{
 				data,
 				setData,
+				selectedIndex,
+				setSelectedIndex,
 			}}
 		>
 			{children}

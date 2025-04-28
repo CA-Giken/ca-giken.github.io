@@ -1,0 +1,95 @@
+.tableContainer {
+	width: 100%;
+	margin: 20px 0;
+}
+
+.tableTitle {
+	margin-bottom: 10px;
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+
+.tableScrollContainer {
+	width: 100%;
+	overflow-x: auto;
+}
+
+.parameterTable {
+	width: 100%;
+	border-collapse: collapse;
+	min-width: 600px;
+}
+
+.parameterTable th,
+.parameterTable td {
+	border: 1px solid #ddd;
+	padding: 8px;
+	text-align: center;
+}
+
+.parameterTable th {
+	font-weight: bold;
+	position: sticky;
+	top: 0;
+}
+
+.dataCell {
+	position: relative;
+}
+
+.editable:hover {
+	background-color: #e6f7ff;
+	cursor: pointer;
+}
+
+.cellInput {
+	width: 100%;
+	text-align: center;
+	background: transparent;
+	outline: none;
+	border-radius: 2px;
+	padding: 4px;
+	border: 1px solid transparent;
+	min-width: 60px;
+}
+
+.cellInput:focus {
+	border-color: #1890ff;
+	box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+.cellInput:hover:not(:disabled) {
+	background-color: #f0f0f0;
+}
+
+.cellInput:disabled {
+	cursor: default;
+	color: rgba(0, 0, 0, 0.65);
+}
+
+.readonlyInput {
+	border: none;
+	cursor: pointer;
+}
+
+.selectedColumn {
+	background-color: rgba(24, 144, 255, 0.1);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+	.tableScrollContainer {
+		max-width: 100%;
+		overflow-x: auto;
+	}
+
+	.tableTitle {
+		font-size: 1rem;
+	}
+
+	.parameterTable th,
+	.parameterTable td {
+		padding: 6px 4px;
+		font-size: 0.9rem;
+	}
+}

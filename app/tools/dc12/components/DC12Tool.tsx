@@ -1,9 +1,15 @@
 "use client";
 
 import { REVISION } from "../constants";
+import { useData } from "../context/data-context";
 import styles from "./DC12Tool.module.css";
+import { Indicator } from "./Indicator";
+import { LogarithmicGraph } from "./LogarithmicGraph";
+import { ParameterTable } from "./ParameterTable";
 
 export const DC12Tool = () => {
+	const { data } = useData();
+
 	return (
 		<div className={styles.container}>
 			<p>Rev.{REVISION}</p>
@@ -26,31 +32,8 @@ export const DC12Tool = () => {
 			</div>
 
 			<div className={styles.graphContainer} id="plot1">
-				<canvas className={styles.graph} id="plot" />
-				<div className={styles.indicatorContainer}>
-					<div className={styles.indicatorCell} />
-					<div className={styles.indicatorCell}>
-						<button id="up" type="button" className={styles.indicator}>
-							↑
-						</button>
-					</div>
-					<div className={styles.indicatorCell} />
-					<div className={styles.indicatorCell}>
-						<button id="left" type="button" className={styles.indicator}>
-							←
-						</button>
-					</div>
-					<div className={styles.indicatorCell}>
-						<button id="down" type="button" className={styles.indicator}>
-							↓
-						</button>
-					</div>
-					<div className={styles.indicatorCell}>
-						<button id="right" type="button" className={styles.indicator}>
-							→
-						</button>
-					</div>
-				</div>
+				<LogarithmicGraph data={data} />
+				<Indicator />
 			</div>
 			<div className={styles.trendContainer} id="plot2">
 				<p>TrendGraph</p>
@@ -91,7 +74,7 @@ export const DC12Tool = () => {
 				</button>
 			</div>
 
-			<table id="rom" />
+			<ParameterTable />
 
 			<div className={styles.actionsContainer} id="funcbar">
 				<button type="button" id="FSload">

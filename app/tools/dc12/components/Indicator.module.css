@@ -1,0 +1,63 @@
+.indicatorContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	margin: 10px 0;
+}
+
+.indicatorGrid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	gap: 4px;
+	width: 120px;
+	height: 120px;
+}
+
+.indicatorCell {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: "#000;";
+}
+
+.indicatorButton {
+	width: 100%;
+	height: 100%;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 16px;
+	transition: all 0.2s ease;
+}
+
+.indicatorButton:hover {
+	background-color: #e0e0e0;
+}
+
+.indicatorButton:active {
+	background-color: #d0d0d0;
+	transform: scale(0.95);
+}
+
+.indicatorButton:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+/* サイズバリエーション */
+.small {
+	font-size: 14px;
+}
+
+.medium {
+	font-size: 16px;
+}
+
+.large {
+	font-size: 18px;
+}
