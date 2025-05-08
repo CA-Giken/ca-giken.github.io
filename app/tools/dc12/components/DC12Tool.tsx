@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { REVISION } from "../constants";
 import { useData } from "../context/data-context";
 import styles from "./DC12Tool.module.css";
@@ -9,9 +10,15 @@ import { ParameterTable } from "./ParameterTable";
 
 export const DC12Tool = () => {
 	const { data } = useData();
+	const [mode, setMode] = useState<"graph" | "trend">("graph");
+
+	const handleModeChange = () => {
+		setMode((prevMode) => (prevMode === "graph" ? "trend" : "graph"));
+	};
 
 	return (
 		<div className={styles.container}>
+			<h1>DC12 Tool</h1>
 			<p>Rev.{REVISION}</p>
 			<div className={styles.dropdown}>
 				<button type="button" id="FMload">
@@ -24,22 +31,23 @@ export const DC12Tool = () => {
 					削除
 				</button>
 				<span style={{ flex: 1 }} />
-				<button type="button" id="swap">
+				<button type="button" onClick={handleModeChange}>
 					グラフ⇔トレンド
 				</button>
 				<hr />
 				<div id="FMpop" />
 			</div>
-
-			<div className={styles.graphContainer} id="plot1">
-				<LogarithmicGraph data={data} />
-				<Indicator />
-			</div>
-			<div className={styles.trendContainer} id="plot2">
-				<p>TrendGraph</p>
-				<canvas className={styles.trend} id="trend" />
-			</div>
-
+			{mode === "graph" && (
+				<div className={styles.graphContainer} id="plot1">
+					<LogarithmicGraph data={data} />
+					<Indicator />
+				</div>
+			)}
+			{mode === "trend" && (
+				<div className={styles.trendContainer} id="plot2">
+					<canvas className={styles.trend} id="trend" />
+				</div>
+			)}
 			<div className={styles.flowContainer}>
 				<button className={styles.flow} type="button" id="connect">
 					接続
