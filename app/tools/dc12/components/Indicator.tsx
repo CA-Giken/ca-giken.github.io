@@ -57,7 +57,7 @@ export const Indicator = ({
 				};
 			});
 		},
-		[disabled, onMove, selectedIndex, setSelectedIndex, setData],
+		[disabled, onMove, selectedIndex, setData],
 	);
 
 	// キーボードイベントのハンドラを設定

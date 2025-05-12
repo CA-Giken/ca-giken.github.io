@@ -1,16 +1,27 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { REVISION } from "../constants";
 import { useData } from "../context/data-context";
+import { useBluetooth } from "../hooks/useBluetooth";
 import styles from "./DC12Tool.module.css";
 import { Indicator } from "./Indicator";
 import { LogarithmicGraph } from "./LogarithmicGraph";
 import { ParameterTable } from "./ParameterTable";
+import { TrendGraph } from "./Trend";
 
 export const DC12Tool = () => {
 	const { data } = useData();
 	const [mode, setMode] = useState<"graph" | "trend">("graph");
+	const {
+		status,
+		connect,
+		disconnect,
+		loadParameter,
+		saveParameter,
+		resumeParameter,
+		loadWaveform,
+	} = useBluetooth();
 
 	const handleModeChange = () => {
 		setMode((prevMode) => (prevMode === "graph" ? "trend" : "graph"));
@@ -45,26 +56,45 @@ export const DC12Tool = () => {
 			)}
 			{mode === "trend" && (
 				<div className={styles.trendContainer} id="plot2">
-					<canvas className={styles.trend} id="trend" />
+					<TrendGraph data={data} />
 				</div>
 			)}
 			<div className={styles.flowContainer}>
-				<button className={styles.flow} type="button" id="connect">
-					接続
+				<button className={styles.flow} type="button" onClick={connect}>
+					{status.isConnected
+						? "転送"
+						: status.isConnecting
+							? "接続処理中"
+							: "接続"}
 				</button>
-				<div className={styles.flow} id="ind_dev">
+				<div
+					className={`${styles.flow} ${status.deviceStatus ? styles.active : ""}`}
+					id="ind_dev"
+				>
 					1
 				</div>
-				<div className={styles.flow} id="ind_srv">
+				<div
+					className={`${styles.flow} ${status.serverStatus ? styles.active : ""}`}
+					id="ind_srv"
+				>
 					2
 				</div>
-				<div className={styles.flow} id="ind_svc">
+				<div
+					className={`${styles.flow} ${status.serviceStatus ? styles.active : ""}`}
+					id="ind_svc"
+				>
 					3
 				</div>
-				<div className={styles.flow} id="ind_adsok">
+				<div
+					className={`${styles.flow} ${status.adsokStatus ? styles.active : ""}`}
+					id="ind_adsok"
+				>
 					4
 				</div>
-				<div className={styles.flow} id="ind_woutok">
+				<div
+					className={`${styles.flow} ${status.woutokStatus ? styles.active : ""}`}
+					id="ind_woutok"
+				>
 					5
 				</div>
 				<div className={styles.flow}>&nbsp;</div>
@@ -77,7 +107,7 @@ export const DC12Tool = () => {
 				<div className={styles.flow} id="ind_wup">
 					U
 				</div>
-				<button className={styles.flow} type="button" id="discon">
+				<button className={styles.flow} type="button" onClick={disconnect}>
 					切断
 				</button>
 			</div>
@@ -85,16 +115,16 @@ export const DC12Tool = () => {
 			<ParameterTable />
 
 			<div className={styles.actionsContainer} id="funcbar">
-				<button type="button" id="FSload">
+				<button type="button" onClick={loadParameter}>
 					読出
 				</button>
-				<button type="button" id="FSsave">
+				<button type="button" onClick={saveParameter}>
 					書込
 				</button>
-				<button type="button" id="FSresume">
+				<button type="button" onClick={resumeParameter}>
 					戻す
 				</button>
-				<button type="button" id="WAVload">
+				<button type="button" onClick={loadWaveform}>
 					波形
 				</button>
 			</div>

@@ -1,5 +1,5 @@
 import type { DC12Data } from "../types/public-types";
-import { convertDataToCurrentRevision } from "./revisionmanager";
+import { convertDataToCurrentRevision } from "./revision-manager";
 const STORAGE_KEY_PREFIX = "dc12_";
 
 class FileManager {

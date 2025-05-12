@@ -59,6 +59,11 @@
 	padding: 1rem;
 	border: 1px solid #ccc;
 	display: block;
+	background-color: #f0f0f0;
+}
+
+.flow.active {
+	background-color: cyan;
 }
 
 button.flow {

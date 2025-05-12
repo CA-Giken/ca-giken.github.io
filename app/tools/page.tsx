@@ -4,7 +4,7 @@ import GridView from "../components/Grid";
 import { ToolCard } from "./ToolCard";
 import styles from "./page.module.css";
 
-const title = `オンラインツール一覧 - ${siteInfo.title}`;
+const title = `ツール・ソフトウェア一覧 - ${siteInfo.title}`;
 const description = "オンライン上で使用可能なCA技研のツール一覧です。";
 
 export const metadata = {
@@ -35,7 +35,7 @@ export default async () => {
 			slug: "dc12",
 			frontMatter: {
 				title: "DC12 Tool",
-				description: "DC12 Tool",
+				description: "DC12のシーケンスを可視化するツール",
 				category: "DC12",
 				image: "/images/dc12tool.png",
 				archived: false,
@@ -45,8 +45,10 @@ export default async () => {
 
 	return (
 		<div className={styles.container}>
-			<BreadcrumbList items={[{ name: "オンラインツール", href: "/tools" }]} />
-			<h1>オンラインツール一覧</h1>
+			<BreadcrumbList
+				items={[{ name: "ツール・ソフトウェア", href: "/tools" }]}
+			/>
+			<h1>ツール・ソフトウェア一覧</h1>
 			<GridView>
 				{tools
 					.filter((tool) => !tool.frontMatter.archived)
