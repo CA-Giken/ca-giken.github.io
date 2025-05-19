@@ -4,13 +4,15 @@ import { useEffect, useState } from "react";
 import { useData } from "../context/data-context";
 import {
 	type DataPreset,
+	createPreset,
 	deletePreset,
 	getPresets,
-	savePreset,
 	updatePreset,
 } from "../lib/data-preset-service";
 
-export const useDataPreset = () => {
+export const useDataPreset = ({
+	withDefaults = false,
+}: { withDefaults: boolean }) => {
 	const { data, setData } = useData();
 	const [selectedPreset, setSelectedPreset] = useState<DataPreset | null>(null);
 	const [presets, setPresets] = useState<DataPreset[]>([]);
@@ -18,15 +20,16 @@ export const useDataPreset = () => {
 
 	// プリセットリストを読み込む
 	useEffect(() => {
-		setPresets(getPresets());
-	}, []);
+		setPresets(getPresets(withDefaults));
+	}, [withDefaults]);
 
 	// プリセットを保存（新規）
 	const handleSavePreset = () => {
 		if (!presetName.trim()) return;
 
-		const newPreset = savePreset(presetName.trim(), data);
-		setPresets(getPresets()); // 最新のプリセットリストを再取得
+		const id = Date.now().toString();
+		const newPreset = createPreset(id, presetName.trim(), data);
+		setPresets(getPresets(withDefaults));
 	};
 
 	// プリセットを上書き保存
@@ -36,7 +39,7 @@ export const useDataPreset = () => {
 
 		const updated = updatePreset(id, presetName.trim(), data);
 		if (updated) {
-			setPresets(getPresets()); // 最新のプリセットリストを再取得
+			setPresets(getPresets(withDefaults));
 		}
 	};
 
@@ -51,7 +54,7 @@ export const useDataPreset = () => {
 		if (id === "default") throw new Error("Cannot delete default preset");
 
 		if (deletePreset(id)) {
-			setPresets(getPresets()); // 最新のプリセットリストを再取得
+			setPresets(getPresets(withDefaults)); // 最新のプリセットリストを再取得
 		}
 	};
 

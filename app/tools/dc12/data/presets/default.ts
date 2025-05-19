@@ -3,7 +3,7 @@ import type { DC12Data } from "../../types/public-types";
 
 const defaultDC12Data: DC12Data = {
 	name: "DC12 Default",
-	revision: "230711",
+	revision: "300000",
 	sequence: {
 		"1": {
 			x: 0,

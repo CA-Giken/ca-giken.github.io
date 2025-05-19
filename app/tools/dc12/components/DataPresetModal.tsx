@@ -16,6 +16,8 @@ export const DataPresetModal = ({
 	mode,
 	onClose,
 }: DataPresetModalProps) => {
+	const withDefaults = mode === "open";
+
 	const {
 		selectedPreset,
 		presets,
@@ -26,7 +28,7 @@ export const DataPresetModal = ({
 		handleDeletePreset,
 		handleLoadPreset,
 		setPresetName,
-	} = useDataPreset();
+	} = useDataPreset({ withDefaults });
 
 	const modalRef = useRef<HTMLDivElement>(null);
 	const inputRef = useRef<HTMLInputElement>(null);
