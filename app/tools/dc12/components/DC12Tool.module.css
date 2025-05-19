@@ -11,6 +11,7 @@
 	margin-top: 12px;
 	margin-bottom: 12px;
 	position: relative;
+	gap: 0.25rem;
 }
 
 .dropdown button {
@@ -141,6 +142,7 @@
 	display: flex;
 	flex-direction: row;
 	width: 100%;
+	gap: 0.25rem;
 }
 
 .actionsContainer button {
@@ -165,6 +167,7 @@
 	border: 1px solid #ccc;
 	display: block;
 	background-color: #f0f0f0;
+	color: gray;
 }
 
 .flow.active {

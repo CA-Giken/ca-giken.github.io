@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { bluetoothService } from "../lib/bluetooth-service";
+import { BTLE } from "../lib/BTLE";
 
 interface BluetoothStatus {
 	isConnected: boolean;
@@ -11,6 +11,9 @@ interface BluetoothStatus {
 	serviceStatus: boolean;
 	adsokStatus: boolean;
 	woutokStatus: boolean;
+	parameterReadStatus: boolean; // パラメータ読み出し状態
+	parameterWriteStatus: boolean; // パラメータ書き込み状態
+	parameterUpdateStatus: boolean; // パラメータ更新状態
 	error: Error | null;
 }
 
@@ -23,6 +26,9 @@ export function useBluetooth() {
 		serviceStatus: false,
 		adsokStatus: false,
 		woutokStatus: false,
+		parameterReadStatus: false,
+		parameterWriteStatus: false,
+		parameterUpdateStatus: false,
 		error: null,
 	});
 
@@ -87,6 +93,51 @@ export function useBluetooth() {
 			}));
 		};
 
+		// パラメータ読み出し状態ハンドラ
+		const onParameterRead = () => {
+			setStatus((prev) => ({
+				...prev,
+				parameterReadStatus: true,
+			}));
+			// 1秒後に状態をリセット
+			setTimeout(() => {
+				setStatus((prev) => ({
+					...prev,
+					parameterReadStatus: false,
+				}));
+			}, 1000);
+		};
+
+		// パラメータ書き込み状態ハンドラ
+		const onParameterWrite = () => {
+			setStatus((prev) => ({
+				...prev,
+				parameterWriteStatus: true,
+			}));
+			// 1秒後に状態をリセット
+			setTimeout(() => {
+				setStatus((prev) => ({
+					...prev,
+					parameterWriteStatus: false,
+				}));
+			}, 1000);
+		};
+
+		// パラメータ更新状態ハンドラ
+		const onParameterUpdate = () => {
+			setStatus((prev) => ({
+				...prev,
+				parameterUpdateStatus: true,
+			}));
+			// 1秒後に状態をリセット
+			setTimeout(() => {
+				setStatus((prev) => ({
+					...prev,
+					parameterUpdateStatus: false,
+				}));
+			}, 1000);
+		};
+
 		const onDisconnect = () => {
 			setStatus({
 				isConnected: false,
@@ -96,11 +147,15 @@ export function useBluetooth() {
 				serviceStatus: false,
 				adsokStatus: false,
 				woutokStatus: false,
+				parameterReadStatus: false,
+				parameterWriteStatus: false,
+				parameterUpdateStatus: false,
 				error: null,
 			});
 		};
 
-		const onError = (error: Error) => {
+		const onError = (...args: unknown[]) => {
+			const error = args[0] as Error;
 			setStatus((prev) => ({
 				...prev,
 				error,
@@ -108,7 +163,8 @@ export function useBluetooth() {
 			}));
 		};
 
-		const onReceive = (dataView: DataView) => {
+		const onReceive = (...args: unknown[]) => {
+			const dataView = args[0] as DataView;
 			const des = dataView.getUint16(0);
 			const det = des & 0xf000;
 
@@ -127,29 +183,35 @@ export function useBluetooth() {
 		};
 
 		// イベントリスナーを登録
-		bluetoothService.on("connecting", onConnecting);
-		bluetoothService.on("connect", onConnect);
-		bluetoothService.on("server", onServer);
-		bluetoothService.on("service", onService);
-		bluetoothService.on("adsok", onAdsok);
-		bluetoothService.on("woutok", onWoutok);
-		bluetoothService.on("ready", onReady);
-		bluetoothService.on("disconnect", onDisconnect);
-		bluetoothService.on("error", onError);
-		bluetoothService.on("receive", onReceive);
+		BTLE.on("connecting", onConnecting);
+		BTLE.on("connect", onConnect);
+		BTLE.on("server", onServer);
+		BTLE.on("service", onService);
+		BTLE.on("adsok", onAdsok);
+		BTLE.on("woutok", onWoutok);
+		BTLE.on("ready", onReady);
+		BTLE.on("disconnect", onDisconnect);
+		BTLE.on("error", onError);
+		BTLE.on("receive", onReceive);
+		BTLE.on("parameter_read", onParameterRead);
+		BTLE.on("parameter_write", onParameterWrite);
+		BTLE.on("parameter_update", onParameterUpdate);
 
 		// クリーンアップ関数
 		return () => {
-			bluetoothService.removeListener("connecting", onConnecting);
-			bluetoothService.removeListener("connect", onConnect);
-			bluetoothService.removeListener("server", onServer);
-			bluetoothService.removeListener("service", onService);
-			bluetoothService.removeListener("adsok", onAdsok);
-			bluetoothService.removeListener("woutok", onWoutok);
-			bluetoothService.removeListener("ready", onReady);
-			bluetoothService.removeListener("disconnect", onDisconnect);
-			bluetoothService.removeListener("error", onError);
-			bluetoothService.removeListener("receive", onReceive);
+			BTLE.removeListener("connecting", onConnecting);
+			BTLE.removeListener("connect", onConnect);
+			BTLE.removeListener("server", onServer);
+			BTLE.removeListener("service", onService);
+			BTLE.removeListener("adsok", onAdsok);
+			BTLE.removeListener("woutok", onWoutok);
+			BTLE.removeListener("ready", onReady);
+			BTLE.removeListener("disconnect", onDisconnect);
+			BTLE.removeListener("error", onError);
+			BTLE.removeListener("receive", onReceive);
+			BTLE.removeListener("parameter_read", onParameterRead);
+			BTLE.removeListener("parameter_write", onParameterWrite);
+			BTLE.removeListener("parameter_update", onParameterUpdate);
 		};
 	}, []);
 
@@ -161,27 +223,30 @@ export function useBluetooth() {
 			return;
 		}
 
-		return bluetoothService.ready();
+		return BTLE.ready();
 	};
 
 	// 切断処理
 	const disconnect = async () => {
-		return bluetoothService.disconnect();
+		return BTLE.disconnect();
 	};
 
 	// パラメーター読み込み
 	const loadParameter = async () => {
-		return bluetoothService.write2(0xfa01);
+		BTLE.emit("parameter_read");
+		return BTLE.write2(0xfa01);
 	};
 
 	// パラメーター書き込み
 	const saveParameter = async () => {
-		return bluetoothService.write2(0xfa05);
+		BTLE.emit("parameter_write");
+		return BTLE.write2(0xfa05);
 	};
 
 	// パラメーター復元
 	const resumeParameter = async () => {
-		return bluetoothService.write2(0xfa03);
+		BTLE.emit("parameter_update");
+		return BTLE.write2(0xfa03);
 	};
 
 	// 波形データ読み込み
@@ -191,12 +256,12 @@ export function useBluetooth() {
 			rev: [],
 			vel: [],
 		});
-		return bluetoothService.write2(0xfc01);
+		return BTLE.write2(0xfc01);
 	};
 
 	// パラメーター書き込み (アドレスと値)
 	const writeParameter = async (address: number, value: number) => {
-		return bluetoothService.write3(0xa000 | address, value);
+		return BTLE.write3(0xa000 | address, value);
 	};
 
 	return {

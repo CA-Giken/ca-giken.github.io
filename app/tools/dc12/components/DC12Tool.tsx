@@ -5,6 +5,7 @@ import { REVISION } from "../constants";
 import { useData } from "../context/data-context";
 import { useBluetooth } from "../hooks/useBluetooth";
 import { useDataPreset } from "../hooks/useDataPreset";
+import { BluetoothIndicators } from "./BluetoothIndicators";
 import styles from "./DC12Tool.module.css";
 import { DataPresetModal } from "./DataPresetModal";
 import { Indicator } from "./Indicator";
@@ -89,46 +90,13 @@ export const DC12Tool = () => {
 							? "接続処理中"
 							: "接続"}
 				</button>
-				<div
-					className={`${styles.flow} ${status.deviceStatus ? styles.active : ""}`}
-					id="ind_dev"
-				>
-					1
-				</div>
-				<div
-					className={`${styles.flow} ${status.serverStatus ? styles.active : ""}`}
-					id="ind_srv"
-				>
-					2
-				</div>
-				<div
-					className={`${styles.flow} ${status.serviceStatus ? styles.active : ""}`}
-					id="ind_svc"
-				>
-					3
-				</div>
-				<div
-					className={`${styles.flow} ${status.adsokStatus ? styles.active : ""}`}
-					id="ind_adsok"
-				>
-					4
-				</div>
-				<div
-					className={`${styles.flow} ${status.woutokStatus ? styles.active : ""}`}
-					id="ind_woutok"
-				>
-					5
-				</div>
-				<div className={styles.flow}>&nbsp;</div>
-				<div className={styles.flow} id="ind_pup">
-					R
-				</div>
-				<div className={styles.flow} id="ind_pdw">
-					W
-				</div>
-				<div className={styles.flow} id="ind_wup">
-					U
-				</div>
+				<BluetoothIndicators
+					status={status}
+					// BTLEの操作に応じてアクティブ状態を切り替える
+					onPupActive={status.parameterReadStatus}
+					onPdwActive={status.parameterWriteStatus}
+					onWupActive={status.parameterUpdateStatus}
+				/>
 				<button className={styles.flow} type="button" onClick={disconnect}>
 					切断
 				</button>

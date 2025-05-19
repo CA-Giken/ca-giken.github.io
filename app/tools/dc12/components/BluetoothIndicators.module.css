@@ -1,0 +1,50 @@
+.indicatorsContainer {
+	display: flex;
+	flex-direction: row;
+	flex: 1;
+	justify-content: space-between;
+	gap: 0.25rem;
+	flex-wrap: nowrap;
+}
+
+.indicator {
+	flex: 1;
+	text-align: center;
+	padding: 1rem;
+	border: 1px solid #ccc;
+	display: block;
+	background-color: #f0f0f0;
+	transition: background-color 0.3s ease;
+	color: gray;
+}
+
+.indicator.active {
+	background-color: cyan;
+	font-weight: bold;
+}
+
+.divider {
+	flex: 1;
+	text-align: center;
+	padding: 1rem;
+	border: 1px solid #ccc;
+	display: block;
+	background-color: #f0f0f0;
+}
+
+/* パラメータ操作インジケータのスタイル */
+.parameterIndicator {
+	flex: 1;
+	text-align: center;
+	padding: 1rem;
+	border: 1px solid #ccc;
+	display: block;
+	background-color: #f0f0f0;
+	transition: background-color 0.3s ease;
+	color: gray;
+}
+
+.parameterIndicator.active {
+	background-color: #ffcc00; /* パラメータ操作は別の色で表示 */
+	font-weight: bold;
+}
