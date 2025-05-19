@@ -15,7 +15,6 @@ class EventEmitter {
 			return false;
 		}
 
-		// forEach の代わりに for...of を使用
 		for (const listener of this.events[event]) {
 			listener(...args);
 		}

@@ -10,12 +10,117 @@
 	width: 100%;
 	margin-top: 12px;
 	margin-bottom: 12px;
+	position: relative;
 }
 
 .dropdown button {
 	border: 1px solid #ccc;
 	padding: 10px;
 	cursor: pointer;
+}
+
+.dropdown button.active {
+	background-color: #f0f7ff;
+	border-color: #0070f3;
+}
+
+.presetDropdown {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 350px;
+	background: white;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	z-index: 10;
+	padding: 15px;
+}
+
+.presetDropdown h3 {
+	margin-top: 0;
+	margin-bottom: 15px;
+	font-size: 1.1rem;
+}
+
+.presetList {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	max-height: 300px;
+	overflow-y: auto;
+}
+
+.presetList li {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+	border-bottom: 1px solid #eee;
+	cursor: pointer;
+}
+
+.presetList li:hover {
+	background-color: #f9f9f9;
+}
+
+.presetList li:last-child {
+	border-bottom: none;
+}
+
+.presetDate {
+	font-size: 0.8rem;
+	color: #666;
+	margin-left: 10px;
+}
+
+.saveForm {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.saveForm label {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.saveForm input {
+	padding: 8px 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 1rem;
+}
+
+.actionButton {
+	padding: 8px 16px;
+	background-color: #0070f3;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	align-self: flex-end;
+}
+
+.actionButton:disabled {
+	background-color: #ccc;
+	cursor: not-allowed;
+}
+
+.deleteButton {
+	padding: 6px 12px;
+	background-color: #f44336;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.emptyState {
+	text-align: center;
+	color: #666;
+	padding: 15px 0;
 }
 
 .graphContainer {
