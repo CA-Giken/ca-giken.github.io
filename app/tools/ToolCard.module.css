@@ -1,0 +1,61 @@
+.card {
+	display: block;
+	border: 1px solid rgb(var(--card-border-rgb));
+	border-radius: 0.5rem;
+	background-color: rgb(var(--card-rgb));
+	overflow: hidden;
+	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.5), 0 3px 6px 0 rgba(0, 0, 0, 0.5);
+	transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+	box-shadow: 0 6px 12px 0px rgba(0, 0, 0, 0.2), 0 6px 12px 0px
+		rgba(0, 0, 0, 0.2);
+	transform: translateY(-6px);
+}
+
+.imageContainer {
+	width: 100%;
+	height: 0;
+	display: none;
+	padding-bottom: 75%; /* 4:3 aspect ratio */
+	position: relative;
+}
+
+.image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.content {
+	padding: 0.75rem;
+}
+
+.title {
+	color: rgb(var(--foreground-rgb));
+	font-size: 1rem;
+	font-weight: 600;
+	margin-bottom: 0.25rem;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.description {
+	font-size: 0.875rem;
+	color: rgb(var(--foreground-rgb));
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+@media (min-width: 768px) {
+	.imageContainer {
+		display: block;
+	}
+}

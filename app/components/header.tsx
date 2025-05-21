@@ -37,19 +37,34 @@ export const Header = () => {
 						閉じる
 					</button>
 					<li>
-						<Link href="/" onClick={() => setIsMenuOpen(false)}>ホーム</Link>
+						<Link href="/" onClick={() => setIsMenuOpen(false)}>
+							ホーム
+						</Link>
 					</li>
 					<li>
-						<Link href="/products" onClick={() => setIsMenuOpen(false)}>製品情報</Link>
+						<Link href="/products" onClick={() => setIsMenuOpen(false)}>
+							製品情報
+						</Link>
+					</li>
+					{/* <li>
+						<Link href="/tools" onClick={() => setIsMenuOpen(false)}>
+							ツール・ソフトウェア
+						</Link>
+					</li> */}
+					<li>
+						<Link href="/blogs" onClick={() => setIsMenuOpen(false)}>
+							ニュース
+						</Link>
 					</li>
 					<li>
-						<Link href="/blogs" onClick={() => setIsMenuOpen(false)}>ニュース</Link>
+						<Link href="/aboutus" onClick={() => setIsMenuOpen(false)}>
+							当社について
+						</Link>
 					</li>
 					<li>
-						<Link href="/aboutus" onClick={() => setIsMenuOpen(false)}>当社について</Link>
-					</li>
-					<li>
-						<Link href="/contactus" onClick={() => setIsMenuOpen(false)}>お問い合わせ</Link>
+						<Link href="/contactus" onClick={() => setIsMenuOpen(false)}>
+							お問い合わせ
+						</Link>
 					</li>
 				</ul>
 			</nav>
