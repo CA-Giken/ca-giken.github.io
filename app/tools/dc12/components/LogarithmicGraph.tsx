@@ -32,7 +32,9 @@ type LogarithmicGraphProps = {
 };
 
 export const LogarithmicGraph = ({ data }: LogarithmicGraphProps) => {
-	const [chartData, setChartData] = useState(undefined);
+	const [chartData, setChartData] = useState<
+		ChartData<"line", Point[], unknown> | undefined
+	>(undefined);
 	const { selectedIndex } = useData();
 
 	// グラフのオプション設定
@@ -87,7 +89,7 @@ export const LogarithmicGraph = ({ data }: LogarithmicGraphProps) => {
 						// 選択されているインデックスのみスタイルを変更
 						if (sequence_name === SEQUENCE_NAMES[selectedIndex]) {
 							return {
-								x: [Math.max(1, step.x)],
+								x: Math.max(1, step.x),
 								y: step.y,
 								pointRadius: 8,
 								pointBackgroundColor: "rgba(54, 162, 235, 1)",
@@ -95,7 +97,7 @@ export const LogarithmicGraph = ({ data }: LogarithmicGraphProps) => {
 								pointBorderWidth: 4,
 							};
 						}
-						return { x: [Math.max(1, step.x)], y: step.y };
+						return { x: Math.max(1, step.x), y: step.y };
 					}),
 				},
 			];
