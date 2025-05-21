@@ -18,6 +18,7 @@ ServoCASTは従来の電子制御ブレーキとは一線を画するブレー�
 [ティーザー](/images/products/ardcino/teaser01.webm)
 
 ## Links
+- [アプリ](https://www.c-able.ne.jp/~hirai551/dl/dc12.html)![アプリ](/images/products/ardcino/QR_787318.png)
 - [プログラム書き換え](https://www.c-able.ne.jp/~hirai551/dl/dc/)
 - [ドキュメント](https://github.com/KazukiHiraizumi/arDCino)
 - [コード](https://github.com/KazukiHiraizumi/DCuino)
