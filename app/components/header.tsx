@@ -46,11 +46,11 @@ export const Header = () => {
 							製品情報
 						</Link>
 					</li>
-					<li>
+					{/* <li>
 						<Link href="/tools" onClick={() => setIsMenuOpen(false)}>
 							ツール・ソフトウェア
 						</Link>
-					</li>
+					</li> */}
 					<li>
 						<Link href="/blogs" onClick={() => setIsMenuOpen(false)}>
 							ニュース
