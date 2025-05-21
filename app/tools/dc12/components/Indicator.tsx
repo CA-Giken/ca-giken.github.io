@@ -31,7 +31,8 @@ export const Indicator = ({
 
 			// 方向に応じた処理
 			setData((prev) => {
-				const updatedValue = prev[SEQUENCE_NAMES[selectedIndex]];
+				const updatedValue =
+					prev.sequence[SEQUENCE_NAMES[selectedIndex] as keyof typeof prev];
 				if (!updatedValue) throw new Error("Invalid data structure");
 				switch (direction) {
 					case "up":

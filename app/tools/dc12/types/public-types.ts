@@ -1,4 +1,13 @@
-export const SEQUENCE_NAMES = ["1", "2", "3", "4", "5", "R", "W", "U"] as const;
+export const SEQUENCE_NAMES: string[] = [
+	"1",
+	"2",
+	"3",
+	"4",
+	"5",
+	"R",
+	"W",
+	"U",
+] as const;
 export enum PARAMETER_NAMES {
 	Zpos = "Zpos",
 	UD8 = "UD8",
