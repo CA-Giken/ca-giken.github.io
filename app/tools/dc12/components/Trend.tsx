@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 import { useData } from "../context/data-context";
 import { useBluetooth } from "../hooks/useBluetooth";

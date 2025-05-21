@@ -30,12 +30,14 @@ const STORAGE_KEY = "dc12-presets";
 export const getPresets = (defaults: boolean): DataPreset[] => {
 	let presets: DataPreset[] = [];
 	if (defaults) presets = [...DEFAULT_PRESETS];
+
+	// サーバーサイドレンダリング時はデフォルトプリセットのみ返す
 	if (typeof window === "undefined") return presets;
 
-	const storedData = localStorage.getItem(STORAGE_KEY);
-	if (!storedData) return presets;
-
 	try {
+		const storedData = localStorage.getItem(STORAGE_KEY);
+		if (!storedData) return presets;
+
 		presets = [...JSON.parse(storedData), ...presets];
 		// リビジョンチェック
 		presets = presets.filter((preset) => {
@@ -56,8 +58,6 @@ export const createPreset = (
 	name: string,
 	data: DC12Data,
 ): DataPreset => {
-	const presets = getPresets(false);
-
 	const newPreset: DataPreset = {
 		id: Date.now().toString(),
 		name,
@@ -65,8 +65,17 @@ export const createPreset = (
 		data,
 	};
 
+	// サーバーサイドレンダリング時は保存をスキップ
+	if (typeof window === "undefined") return newPreset;
+
+	const presets = getPresets(false);
 	const updatedPresets = [...presets, newPreset];
-	localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedPresets));
+
+	try {
+		localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedPresets));
+	} catch (error) {
+		console.error("Failed to save preset:", error);
+	}
 
 	return newPreset;
 };
@@ -75,6 +84,9 @@ export const createPreset = (
  * プリセットを削除
  */
 export const deletePreset = (id: string): boolean => {
+	// サーバーサイドレンダリング時は削除をスキップ
+	if (typeof window === "undefined") return false;
+
 	const presets = getPresets(false);
 	const updatedPresets = presets.filter((preset) => preset.id !== id);
 
@@ -82,7 +94,13 @@ export const deletePreset = (id: string): boolean => {
 		return false;
 	}
 
-	localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedPresets));
+	try {
+		localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedPresets));
+	} catch (error) {
+		console.error("Failed to delete preset:", error);
+		return false;
+	}
+
 	return true;
 };
 
@@ -94,6 +112,9 @@ export const updatePreset = (
 	name: string,
 	data: DC12Data,
 ): DataPreset | null => {
+	// サーバーサイドレンダリング時は更新をスキップ
+	if (typeof window === "undefined") return null;
+
 	const presets = getPresets(false);
 	const presetIndex = presets.findIndex((preset) => preset.id === id);
 
@@ -110,6 +131,12 @@ export const updatePreset = (
 	const updatedPresets = [...presets];
 	updatedPresets[presetIndex] = updatedPreset;
 
-	localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedPresets));
+	try {
+		localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedPresets));
+	} catch (error) {
+		console.error("Failed to update preset:", error);
+		return null;
+	}
+
 	return updatedPreset;
 };

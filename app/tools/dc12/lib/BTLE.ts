@@ -107,6 +107,15 @@ class BTLEService extends EventEmitter {
 	// 接続処理
 	async connect() {
 		try {
+			// サーバーサイドレンダリング時はエラーを返す
+			if (
+				typeof window === "undefined" ||
+				typeof navigator === "undefined" ||
+				!navigator.bluetooth
+			) {
+				throw new Error("Bluetooth is not supported in this environment");
+			}
+
 			this.emit("connecting");
 
 			this.device = await navigator.bluetooth.requestDevice({
@@ -385,6 +394,11 @@ class BTLEService extends EventEmitter {
 
 	// WebBluetoothのサポート確認
 	isWebBluetoothEnabled() {
+		// サーバーサイドレンダリング時はfalseを返す
+		if (typeof window === "undefined" || typeof navigator === "undefined") {
+			return false;
+		}
+
 		if (navigator.bluetooth) {
 			return true;
 		}

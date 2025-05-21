@@ -1,17 +1,14 @@
 "use client";
 
-import { DC12Tool } from "./components/DC12Tool";
-import { DataProvider } from "./context/data-context";
+import dynamic from "next/dynamic";
 import styles from "./page.module.css";
 
-export default () => {
-	return (
-		<DataProvider>
-			<DC12ToolContainer />
-		</DataProvider>
-	);
-};
+// クライアントサイドでのみ読み込むコンポーネント
+const DynamicDC12Tool = dynamic(
+	() => import("./components/ClientDC12Tool").then((mod) => mod.ClientDC12Tool),
+	{ ssr: false }, // サーバーサイドレンダリングを無効にする
+);
 
-const DC12ToolContainer = () => {
-	return <DC12Tool />;
+export default () => {
+	return <DynamicDC12Tool />;
 };
