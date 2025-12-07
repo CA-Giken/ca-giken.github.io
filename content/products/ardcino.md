@@ -1,14 +1,14 @@
 ---
 title: "Caster Burner"
 description: "『シンプル×自由×快感』ベイトキャスティングリールの未体験領域が始動。オープンソース自動ブレーキ"
-image: "/images/products/casterburnerR.svg"
+image: "/images/products/ardcino/casterburnerR.svg"
 created_at: 20240925
 last_updated: 21000101
 category: "oss"
 archived: false
 ---
 
-![タイトル](/images/products/casterburnerR.svg)
+![タイトル](/images/products/ardcino/casterburnerR.svg)
 
 # Caster Burner  
 『シンプル×自由×快感』ベイトキャスティングリールの未体験領域が始動。オープンソース自動ブレーキ
