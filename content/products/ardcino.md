@@ -1,6 +1,6 @@
 ---
 title: "Caster Burner"
-description: "『シンプル×自由×爽快』ベイトキャスティングリールの未体験領域が始動"
+description: "『シンプル×自由×爽快』ACAS Level-II適合、ベイトキャスティングリールの未体験領域が始動"
 image: "/images/products/ardcino/casterburner.png"
 created_at: 20240925
 last_updated: 21000101
@@ -11,8 +11,7 @@ archived: false
 ![タイトル](/images/products/ardcino/casterburnerR.svg)
 
 # Caster Burner  
-『シンプル×自由×爽快』ベイトキャスティングの未知領域が始動。**Caster Burner**は[ACAS](### 
-ACAS)時代をリードするリールOSです。
+『シンプル×自由×爽快』ベイトキャスティングの未知領域が始動。**ACAS**Level-II適合のリール制御ソフトウェア。
 ## シンプル  
 **Caster Burner**にはブレーキ調整ためのダイアルは不要です。キャスターはただ投げるだけで最適なブレーキをソフトウェアロジックが決定します。**Caster Burner**は従来の電子制御ブレーキのようなスプールの回転に応じたブレーキではなく、ラインテンションを直接制御します。この新テクノロジーがリール任せのシンプル操作を実現しました。
 
@@ -24,12 +23,16 @@ ACAS)時代をリードするリールOSです。
 
 ---
 ### ACAS
-ACAS（エイキャス:Advanced Casting Assistant System）は、[ベイトキャスティングリール](https://en.wikipedia.org/wiki/Fishing_reel#Baitcasting_reel)の操作性を飛躍的に向上させる革新技術です。ACASはあらゆる風の状態や様々なルアーの使用状況において、自律的に最適なブレーキを決定します。
+ACAS（エイキャス:Advanced Casting Assistant System）は、[ベイトキャスティングリール](https://en.wikipedia.org/wiki/Fishing_reel#Baitcasting_reel)の操作性を飛躍的に向上させる、リール制御ソフトウェアです。
 
-#### ACAS主要要件
-1. 人間によるブレーキ調整が不要であること
-2. バックラッシュを最小化すること
-3. 飛距離を最大化すること
+#### ACAS要件
+- Level-I / Auto Braking  
+風状況およびルアー種別に対して、ヒトによるブレーキ調整に依らず、最適なブレーキを自律的に決定すること。  
+ヒトによるブレーキ調整に対して、飛距離ロスがないこと。
+- Level-II / Auto Braking+  
+Level-I要件に、ライン種別(ナイロン・フロロ・PE)の自動判別を加えること。
+- Level-III / Auto Thumbing  
+Level-II要件に、ルアー着水時のスプール自動停止機能を加えること。
 
 #### 実現手法
 1. 制御工学に基づく方法
